@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/id_preview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_centerInParent="true">
+
+        <SurfaceView
+            android:id="@+id/surfaceViewOverlap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <android.opengl.GLSurfaceView
+            android:id="@+id/id_gl_sv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <sensetime.senseme.com.effects.view.VerticalSeekBar
+        android:id="@+id/vertical_seekbar"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:maxHeight="2dp"
+        android:minHeight="2dp"
+        android:progressDrawable="@drawable/vertical_setting_bright_progressbar"
+        android:thumb="@drawable/icon_light"
+        android:layout_marginRight="24dp" />
+
+    <Switch
+        android:id="@+id/testSwitch0"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:switchMinWidth="56dp"
+        android:thumbTextPadding="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120dp"
+        android:layout_toRightOf="@+id/tv_performance"
+        android:layout_marginLeft="40dp"
+        android:textOn=""
+        android:textOff=""
+        android:visibility="invisible"
+        android:thumb="@drawable/thumb"
+        android:track="@drawable/track" />
+
+    <Switch
+        android:id="@+id/testSwitch1"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:switchMinWidth="56dp"
+        android:thumbTextPadding="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
+        android:layout_toRightOf="@+id/tv_performance"
+        android:layout_marginLeft="40dp"
+        android:textOn=""
+        android:textOff=""
+        android:visibility="invisible"
+        android:thumb="@drawable/thumb"
+        android:track="@drawable/track" />
+    <Switch
+        android:id="@+id/testSwitch2"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:switchMinWidth="56dp"
+        android:thumbTextPadding="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
+        android:layout_toRightOf="@+id/tv_performance"
+        android:layout_marginLeft="40dp"
+        android:textOn=""
+        android:textOff=""
+        android:visibility="invisible"
+        android:thumb="@drawable/thumb"
+        android:track="@drawable/track" />
+
+    <TextView
+        android:id="@+id/id_tv_changesticker"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#FF000000"
+        android:gravity="center"
+        android:text="Change"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/id_tv_changecamera"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/id_tv_changesticker"
+        android:background="#FF000000"
+        android:gravity="center"
+        android:text="Switch"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/id_tv_changecamera"
+        android:background="#FF000000"
+        android:gravity="center"
+        android:text="PreviewSize"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <include layout="@layout/activity_interaction"/>
+</RelativeLayout>

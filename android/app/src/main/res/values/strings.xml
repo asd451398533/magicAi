@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SenseAR</string>
+    <string name="video_effect">视频特效</string>
+    <string name="image_effect">图片特效</string>
+    <string name="cpu_filter">CPU滤镜</string>
+    <string name="loading">正在加载资源文件...</string>
+    <string name="powered_by">SenseTime V6.11.5</string>
+
+    <!--interaction tabs-->
+    <string name="frame_radio">单帧耗时：</string>
+    <string name="cpu_radio">CPU占用率：</string>
+    <string name="saving_image">图片保存成功</string>
+
+</resources>

@@ -1,0 +1,137 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"/Users/apple/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"stmobile_jni-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "stmobile_jni",
+			"buildCommand" : "/Users/apple/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a --target stmobile_jni",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_common_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_beautify_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_sticker_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_humanaction_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_animalface_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/utils.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_authentification_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_face_attribute_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_filter_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_streamfilter_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_avatar_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_object_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_sound_play_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_sticker_event_callback_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_makeup_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/jvmutil.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dstmobile_jni_EXPORTS -I../../../.././src/main/jni/prebuilt/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++0x -DHAVE_PTHREADS -fpermissive -O3 -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/src/main/jni/stmobile_color_convert_jni.cpp",
+					"workingDirectory" : "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a"
+				}
+			],
+			"output" : "/Users/apple/lsy/gengmei_app_face/build/STMobileJNI/intermediates/cmake/release/obj/armeabi-v7a/libstmobile_jni.so",
+			"toolchain" : "2737792678101485901"
+		}
+	},
+	"toolchains" : 
+	{
+		"2737792678101485901" : 
+		{
+			"cCompilerExecutable" : "/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/apple/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

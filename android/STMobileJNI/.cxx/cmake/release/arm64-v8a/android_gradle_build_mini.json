@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/apple/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "stmobile_jni-Release-arm64-v8a": {
+      "artifactName": "stmobile_jni",
+      "buildCommand": "/Users/apple/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/arm64-v8a --target stmobile_jni",
+      "abi": "arm64-v8a",
+      "output": "/Users/apple/lsy/gengmei_app_face/build/STMobileJNI/intermediates/cmake/release/obj/arm64-v8a/libstmobile_jni.so"
+    }
+  }
+}

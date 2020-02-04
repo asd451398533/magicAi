@@ -1,0 +1,69 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/apple/lsy/gengmei_app_face/android",
+      "sdkFolder": "/Users/apple/Library/Android/sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/apple/lsy/gengmei_app_face/build/STMobileJNI/intermediates",
+      "gradleModulePathName": ":STMobileJNI",
+      "moduleRootFolder": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI",
+      "makeFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/apple/lsy/gengmei_app_face/android/.cxx",
+      "cxxFolder": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx",
+      "ndkFolder": "/Users/apple/Library/Android/sdk/ndk-bundle",
+      "ndkVersion": "20.1.5948944",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      "-frtti -fexceptions -std\u003dgnu++0x -DHAVE_PTHREADS -fpermissive -O3"
+    ],
+    "variantName": "release",
+    "soFolder": "/Users/apple/lsy/gengmei_app_face/build/STMobileJNI/intermediates/cmake/release/lib",
+    "objFolder": "/Users/apple/lsy/gengmei_app_face/build/STMobileJNI/intermediates/cmake/release/obj",
+    "jsonFolder": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release",
+    "gradleBuildOutputFolder": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cxx/release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARMEABI_V7A",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a",
+  "jsonFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cxx/release/armeabi-v7a",
+  "objFolder": "/Users/apple/lsy/gengmei_app_face/build/STMobileJNI/intermediates/cmake/release/obj/armeabi-v7a",
+  "buildCommandFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a/build_command.txt",
+  "buildOutputFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a/build_output.txt",
+  "modelOutputFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cxx/release/armeabi-v7a/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cxx/release/armeabi-v7a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cxx/release/armeabi-v7a/build_generation_state.json",
+    "cacheKeyFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cxx/release/armeabi-v7a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cxx/release/armeabi-v7a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cxx/release/armeabi-v7a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cxx/release/armeabi-v7a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/release/armeabi-v7a/compile_commands.json"
+}

@@ -1,0 +1,21 @@
+# ninja log v5
+2	1077	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_animalface_jni.cpp.o	5bda30835f2f7db6
+6	1098	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_face_attribute_jni.cpp.o	a8fb5ad697b1687b
+0	1154	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_common_jni.cpp.o	21af01a78dcfcb9c
+1	1161	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_humanaction_jni.cpp.o	aa549ec0b278c099
+4	1166	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_authentification_jni.cpp.o	fb76c4ca00a927c2
+9	1207	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_streamfilter_jni.cpp.o	c0ec2e254f119e77
+8	1283	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_filter_jni.cpp.o	1441ad7e54fcb809
+1	1391	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_beautify_jni.cpp.o	d387d5d127e8e174
+1078	1398	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_avatar_jni.cpp.o	1b96ba803eb203f5
+1	1405	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_sticker_jni.cpp.o	411f2c8cb12bb6e4
+1162	1408	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_sticker_event_callback_jni.cpp.o	c2fecf84b33fb327
+1154	1437	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_sound_play_jni.cpp.o	d5de66570c739959
+1207	1457	0	CMakeFiles/stmobile_jni.dir/src/main/jni/jvmutil.cpp.o	f206555cf9d00976
+1099	1520	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_object_jni.cpp.o	989f48eebeb3e34d
+1283	1603	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_color_convert_jni.cpp.o	d94f60e4e73969aa
+1166	1616	0	CMakeFiles/stmobile_jni.dir/src/main/jni/stmobile_makeup_jni.cpp.o	a498e649ec63714c
+3	1631	0	CMakeFiles/stmobile_jni.dir/src/main/jni/utils.cpp.o	5d7c1e5ddea1839
+1631	1813	0	/Users/apple/lsy/gengmei_app_face/build/STMobileJNI/intermediates/cmake/debug/obj/armeabi-v7a/libstmobile_jni.so	9aab9cb04036460e
+3	309	0	/Users/apple/lsy/gengmei_app_face/build/STMobileJNI/intermediates/cmake/debug/obj/armeabi-v7a/libstmobile_jni.so	9aab9cb04036460e
+20	316	0	/Users/apple/lsy/gengmei_app_face/build/STMobileJNI/intermediates/cmake/debug/obj/armeabi-v7a/libstmobile_jni.so	9aab9cb04036460e

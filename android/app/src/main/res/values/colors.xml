@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="primary">#3F51B5</color>
+    <color name="primaryDark">#303F9F</color>
+    <color name="accent">#4CAF50</color>
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#727272</color>
+    <color name="black">#000000</color>
+    <color name="black1">#11000000</color>
+    <color name="colorWelcomeStart">#ff645f</color>
+    <color name="colorWelcomeEnd">#fe3f35</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorFont">#959595</color>
+
+    <color name="white">#ffffff</color>
+    <color name="gray">#6f6f6f</color>
+    <color name="blue99">#f03F51B5</color>
+    <color name="red">#fe5553</color>
+    <color name="sticker_loading">#34959595</color>
+</resources>

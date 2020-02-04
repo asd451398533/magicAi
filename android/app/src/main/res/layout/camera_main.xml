@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:src="@mipmap/ic_left_arrow_white"
+        app:layout_constraintBottom_toBottomOf="@+id/top"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top" />
+
+
+    <com.example.gengmei_app_face.camera.CameraView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:facing="front"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"
+        />
+
+    <!--<com.example.gengmei_app_face.moble.FixedAspectRatioRelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<SurfaceView-->
+            <!--android:id="@+id/surface_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+    <!--</com.example.gengmei_app_face.moble.FixedAspectRatioRelativeLayout>-->
+
+
+    <com.example.gengmei_app_face.view.CameraHideView
+        android:id="@+id/hideView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/camera"
+        app:layout_constraintTop_toTopOf="@+id/camera"
+        />
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/test"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp" />-->
+
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/black1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+    <View
+        android:id="@+id/camera_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom" />
+
+    <ImageView
+        android:id="@+id/takePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintBottom_toBottomOf="@+id/camera_back"
+        app:layout_constraintLeft_toLeftOf="@+id/camera_back"
+        app:layout_constraintRight_toRightOf="@+id/camera_back"
+        app:layout_constraintTop_toTopOf="@+id/camera_back" />
+
+    <ImageView
+        android:id="@+id/flash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_flash_off"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/camera_back"
+        app:layout_constraintTop_toTopOf="@+id/bottom" />
+
+    <ImageView
+        android:id="@+id/switchCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_switch_camera"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom"
+        app:layout_constraintLeft_toRightOf="@+id/camera_back"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom" />
+
+
+</android.support.constraint.ConstraintLayout>
