@@ -35,11 +35,12 @@ class HomeState extends State<HomePage> {
     GengmeiFlutterPlugin.clearCache();
     GengmeiFlutterPlugin.albumNeedCache(false);
     clearDiskCachedImages();
-    _model.init();
+    _model.init(context);
   }
 
   @override
   Widget build(BuildContext context) {
+    print("HomeState ");
     return WillPopScope(
       child: Scaffold(
 //        bottomNavigationBar: StreamBuilder<int>(

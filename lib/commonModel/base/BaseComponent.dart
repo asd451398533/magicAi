@@ -59,7 +59,8 @@ Text baseText(String text, double fontSize, Color color) {
   return Text(
     text,
     textScaleFactor: 1.0,
-    style: TextStyle(fontSize: fontSize, color: color),
+    textDirection: TextDirection.ltr,
+    style: TextStyle(fontSize: fontSize, color: color,decoration: TextDecoration.none,),
   );
 }
 

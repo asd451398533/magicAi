@@ -220,8 +220,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: HEAD
-      resolved-ref: "75d1a97ec56f1344cc919e7893ecb39f25d165b3"
+      ref: f560639f82ff3b769a34041bdbbe001aa015975b
+      resolved-ref: f560639f82ff3b769a34041bdbbe001aa015975b
       url: "https://github.com/asd451398533/flutter_common.git"
     source: git
     version: "0.0.1"
@@ -489,6 +489,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.5"
+  pull_to_refresh:
+    dependency: "direct main"
+    description:
+      name: pull_to_refresh
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.5.8"
   quiver:
     dependency: transitive
     description:
@@ -627,6 +634,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.1+2"
+  toast:
+    dependency: "direct main"
+    description:
+      name: toast
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.5"
   transformer_page_view:
     dependency: transitive
     description:

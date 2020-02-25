@@ -97,7 +97,7 @@ class XHeadView extends CustomPainter {
 
       TextPainter(
           text: TextSpan(
-              text: "商汤SDK",
+              text: "今日头条选图",
               style: TextStyle(fontSize: 13, color: Colors.black)),
           textDirection: TextDirection.ltr,
           textAlign: TextAlign.center)
@@ -106,14 +106,13 @@ class XHeadView extends CustomPainter {
 
       TextPainter(
           text: TextSpan(
-              text: "AI demo", style: TextStyle(fontSize: 13, color: Colors.black)),
+              text: "今日头条视频", style: TextStyle(fontSize: 13, color: Colors.black)),
           textDirection: TextDirection.ltr,
           textAlign: TextAlign.center)
         ..layout(maxWidth: screenWidth / 2, minWidth: screenWidth / 2)
         ..paint(canvas, Offset(screenWidth / 2, 200 + circleRadius + 6));
     }
 
-    print("ICON OKKKKKKKKKK  ${icon == null}");
 
     if (icon != null) {
       canvas.drawImageRect(
@@ -141,7 +140,9 @@ class XHeadView extends CustomPainter {
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
-    return !(img != null && icon != null && needSyncOne);
+    bool needSync=!(img != null && icon != null && needSyncOne);
+    print("NEED SYNC ${needSync}");
+    return needSync;
   }
 
   double downX;

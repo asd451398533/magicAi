@@ -3,10 +3,13 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gengmei_app_face/UserModel/page/phone/PhonePage.dart';
 import 'package:gengmei_app_face/UserModel/page/setting/UserSettingWidget.dart';
 import 'package:gengmei_app_face/UserModel/service/remote/entity/WXUserBean.dart';
 import 'package:gengmei_app_face/commonModel/GMBase.dart';
+import 'package:gengmei_app_face/commonModel/toast/toast.dart';
 import 'package:gengmei_app_face/commonModel/ui/ALColors.dart';
+import 'package:gengmei_app_face/commonModel/util/JumpUtil.dart';
 import 'package:gengmei_app_face/commonModel/util/WindowUtil.dart';
 
 import 'UserPageModel.dart';
@@ -68,7 +71,14 @@ class UserPageWidgetState extends State<UserPageWidget> {
                     _head = GestureDetector(
                       behavior: HitTestBehavior.opaque,
                       onTap: () {
-                        _model.login(context);
+                        JumpUtil.jumpLeft(context, PhonePage()).then((value){
+                          if(value!=null){
+                            print(value);
+                            _model.login(context,value);
+                          }else{
+                            Toast.show(context, "请完成手机号填写");
+                          }
+                        });
                       },
                       child: SvgPicture.asset("images/replace_head.svg"),
                     );

@@ -16,26 +16,38 @@ class UserPageModel extends BaseModel {
   LiveData<WXUserBean> userLive = new LiveData();
 
   void init(BuildContext context) {
-    getAssToken((assToken) {
-      if (assToken==null) {
+    getUserId((uid) {
+      if (uid == null) {
         userLive.notifyView(WXUserBean()..errcode = -1);
       } else {
-        getNickName((name) {
-          if (name==null) {
+        getAssToken((assToken) {
+          if (assToken == null) {
             userLive.notifyView(WXUserBean()..errcode = -1);
           } else {
-            getHead((head) {
-              if (head==null) {
+            getNickName((name) {
+              if (name == null) {
                 userLive.notifyView(WXUserBean()..errcode = -1);
               } else {
-                userLive.notifyView(WXUserBean()
-                  ..headimgurl = head
-                  ..nickname = name);
+                getHead((head) {
+                  if (head == null) {
+                    userLive.notifyView(WXUserBean()..errcode = -1);
+                  } else {
+                    userLive.notifyView(WXUserBean()
+                      ..headimgurl = head
+                      ..nickname = name);
+                  }
+                });
               }
             });
           }
         });
       }
+    });
+  }
+
+  void getUserId(Function(int uid) func) {
+    UserLocalImpl().getuid().listen((value) {
+      func(value);
     });
   }
 
@@ -62,18 +74,18 @@ class UserPageModel extends BaseModel {
     userLive.dispost();
   }
 
-  void login(BuildContext context) {
+  void login(BuildContext context, String phone) {
     loginWX(WX_APPID).then((value) {
       if (value != null) {
         HashMap<String, Object> map = HashMap<String, Object>.from(value);
         if (map["errcode"] == null ||
             map["errcode"] != 0 ||
-            map["code"]==null) {
+            map["code"] == null) {
           userLive.notifyView(WXUserBean()..errcode = 10086);
         } else {
           UserRepo.getInstance().loginWx(map["code"]).listen((loginValue) {
             print("RETURN >>  ${loginValue}");
-            if (loginValue.errcode!=null&&loginValue.errcode != 0) {
+            if (loginValue.errcode != null && loginValue.errcode != 0) {
               userLive.notifyView(WXUserBean()
                 ..errcode = loginValue.errcode
                 ..errmsg = loginValue.errmsg);
@@ -81,9 +93,19 @@ class UserPageModel extends BaseModel {
               UserRepo.getInstance()
                   .getUserInfo(loginValue.accessToken, loginValue.openid)
                   .listen((value) {
-                userLive.notifyView(value);
-                if(value.errcode==null||value.errcode==0){
-                  Toast.show(context,"登入成功");
+                if (value.errcode == null || value.errcode == 0) {
+                  UserRepo.getInstance()
+                      .loginGM(phone, value.nickname, value.headimgurl)
+                      .listen((GMValue) {
+                    if (GMValue.statusCode == 200) {
+                      userLive.notifyView(value);
+                      Toast.show(context, "登入成功");
+                    } else {
+                      userLive
+                          .notifyView(WXUserBean()..errmsg = GMValue.message);
+                      Toast.show(context, "登入失败" + GMValue.message);
+                    }
+                  });
                 }
               });
             }

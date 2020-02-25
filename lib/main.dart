@@ -1,18 +1,33 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_common/Annotations/anno/RouterCenter.dart';
 import 'package:gengmei_app_face/UserModel/page/user/UserPageWidget.dart';
 import 'package:gengmei_app_face/commonModel/cache/CacheManager.dart';
 import 'package:gengmei_app_face/main.mark.dart';
-import 'package:gengmei_flutter_plugin/gengmei_flutter_plugin.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'HomePage.dart';
 import 'commonModel/toast/toast.dart';
 
 
 void main() async {
-  runApp(MyApp());
+  runApp(switchPage(window.defaultRouteName));
+}
+
+Widget switchPage(String pageRouter){
+  print("FLutter pageRouter "+pageRouter);
+  switch(pageRouter){
+    case "answer":
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: RouterCenterImpl().findUserRouter()?.getAnswerPage(),
+      )
+        ;
+    default:
+      return MyApp();
+  }
 }
 
 @RouterCenter()

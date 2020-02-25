@@ -1,9 +1,9 @@
 #import "TargetViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import <opencv2/imgproc/types_c.h>
-#import <opencv2/imgproc/imgproc_c.h>
-#import <opencv2/imgcodecs/ios.h>
-#import <opencv2/opencv.hpp>
+//#import <opencv2/imgproc/types_c.h>
+//#import <opencv2/imgproc/imgproc_c.h>
+//#import <opencv2/imgcodecs/ios.h>
+//#import <opencv2/opencv.hpp>
 #import "Face.h"
 #import "FaceMtcnnWrapper.h"
 #import <Photos/PHPhotoLibrary.h>

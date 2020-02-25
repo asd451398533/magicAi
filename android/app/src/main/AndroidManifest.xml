@@ -15,13 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="sensetime.senseme.com.effects.TestImageActivity" />
-        <activity android:name="sensetime.senseme.com.effects.TestCameraActivity" />
+        <activity android:name="com.bytedance.labcv.demo.ai.MYVideoAC" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/LaunchTheme_1"
             android:windowSoftInputMode="adjustResize">
@@ -55,7 +55,14 @@
             android:name="sensetime.senseme.com.effects.LoadImageActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true"
+            android:taskAffinity="net.sourceforge.simcpux"
+            android:launchMode="singleTask">
+        </activity>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.gengmei_app_face"
@@ -81,4 +88,6 @@
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 </manifest>

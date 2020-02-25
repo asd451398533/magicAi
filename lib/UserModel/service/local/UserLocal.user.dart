@@ -95,6 +95,31 @@ class UserLocalImpl {
     });
   }
 
+  Future<bool> savephone(String phone) async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    return sp.setString("PHONE_NUMBER", phone);
+  }
+
+  Observable<String> getphone() {
+    return Observable.fromFuture(SharedPreferences.getInstance())
+        .flatMap((value) {
+      return Observable.fromFuture(
+          Future.value(value.getString("PHONE_NUMBER")));
+    });
+  }
+
+  Future<bool> saveuid(int uid) async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    return sp.setInt("USER_ID", uid);
+  }
+
+  Observable<int> getuid() {
+    return Observable.fromFuture(SharedPreferences.getInstance())
+        .flatMap((value) {
+      return Observable.fromFuture(Future.value(value.getInt("USER_ID")));
+    });
+  }
+
   Future<bool> clearAll() async {
     SharedPreferences s = await SharedPreferences.getInstance();
     return s.clear();

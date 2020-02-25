@@ -16,7 +16,10 @@ import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
+import android.widget.Toast;
 
+import com.bytedance.labcv.demo.ai.MYVideoAC;
+import com.example.gengmei_app_face.bean.WXBean;
 import com.example.gengmei_app_face.util.FileUtil;
 import com.example.gengmei_app_face.util.StatusBarUtil;
 import com.gengmei.igengmeisdk.IGengmeiSdk;
@@ -26,6 +29,15 @@ import com.gengmei.igengmeisdk.ffmpeg.IGengmeiFFmpegSdk;
 import com.gengmei.igengmeisdk.helper.IGengmeiFaceListener;
 import com.gengmei.igengmeisdk.helper.IGengmeiSubmitFaceListener;
 import com.gengmei.igengmeisdk.helper.IGengmeiUploadListener;
+import com.tencent.mm.opensdk.modelbase.BaseReq;
+import com.tencent.mm.opensdk.modelbase.BaseResp;
+import com.tencent.mm.opensdk.modelmsg.SendAuth;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -46,13 +58,13 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
-import sensetime.senseme.com.effects.TestCameraActivity;
 import zeusees.tracking.FaceTrackingManager;
 
 import static com.example.gengmei_app_face.CameraActivity.CAMERA_RESULT;
 import static com.example.gengmei_app_face.CameraActivity.CAMERA_RESULT_SCARE;
 import static com.example.gengmei_app_face.constant.AppConstant.CAMERA_CODE;
 import static com.example.gengmei_app_face.constant.AppConstant.CAMERA_CODE_DEMO;
+import static com.example.gengmei_app_face.constant.AppConstant.WX_RESULT;
 import static com.example.gengmei_app_face.util.BMUtil.returnBitMap;
 
 public class MainActivity extends FlutterActivity {
@@ -69,6 +81,7 @@ public class MainActivity extends FlutterActivity {
     private Receiver recevier;
     private IntentFilter intentFilter;
     private Dlib dlib = new Dlib();
+    private IWXAPI WXApi;
 
 
     @Override
@@ -83,7 +96,10 @@ public class MainActivity extends FlutterActivity {
         recevier = new Receiver();
         intentFilter = new IntentFilter();
         intentFilter.addAction("com.alpha.flutter.album");
+        WXApi = WXAPIFactory.createWXAPI(this, "wxa51215876ed98f9e", true);
+        WXApi.registerApp("wxa51215876ed98f9e");
         registerReceiver(recevier, intentFilter);
+        EventBus.getDefault().register(this);
         new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
                 new MethodChannel.MethodCallHandler() {
                     @Override
@@ -241,9 +257,9 @@ public class MainActivity extends FlutterActivity {
                                 break;
                             case "senSDK":
                                 String path = (String) call.arguments;
-                                Intent intent1 = new Intent(getApplicationContext(), sensetime.senseme.com.effects.TestImageActivity.class);
-                                intent1.putExtra("PATH", path);
-                                startActivity(intent1);
+//                                Intent intent1 = new Intent(getApplicationContext(), sensetime.senseme.com.effects.TestImageActivity.class);
+//                                intent1.putExtra("PATH", path);
+//                                startActivity(intent1);
                                 break;
                             case "backApp":
 //                                moveTaskToBack(false);
@@ -253,8 +269,19 @@ public class MainActivity extends FlutterActivity {
                                 startActivity(setIntent);
                                 break;
                             case "demo":
-                                Intent intent2 = new Intent(MainActivity.this, TestCameraActivity.class);
-                                startActivityForResult(intent2, CAMERA_CODE_DEMO);
+//                                Intent intent2 = new Intent(MainActivity.this, MYVideoAC.class);
+//                                startActivityForResult(intent2, CAMERA_CODE_DEMO);
+                                break;
+                            case "loginWX":
+                                if (!WXApi.isWXAppInstalled()) {
+                                    Toast.makeText(MainActivity.this, "您的设备未安装微信客户端", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    final SendAuth.Req req = new SendAuth.Req();
+                                    req.openId = "wxa51215876ed98f9e";
+                                    req.scope = "snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact";
+                                    req.state = "123";
+                                    WXApi.sendReq(req);
+                                }
                                 break;
 //                            default:
 //                                result.notImplemented();
@@ -262,8 +289,6 @@ public class MainActivity extends FlutterActivity {
                         }
                     }
                 });
-
-
     }
 
     public class Receiver extends BroadcastReceiver {
@@ -318,6 +343,17 @@ public class MainActivity extends FlutterActivity {
         }
     }
 
+    @Subscribe
+    public void wxLogin(WXBean bean) {
+        if(bean!=null){
+            HashMap map = new HashMap();
+            map.put("code", bean.getCode());
+            map.put("state", bean.getState());
+            map.put("errcode", bean.getErrorCode());
+            MainActivity.this.result.success(map);
+        }
+    }
+
 
     private int redetectInt = 0;
 
@@ -369,6 +405,8 @@ public class MainActivity extends FlutterActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
+        WXApi.unregisterApp();
         if (ref != null) {
             ref.clear();
             ref = null;

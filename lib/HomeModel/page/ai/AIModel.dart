@@ -174,7 +174,7 @@ class AIModel extends BaseModel {
         if (value.data.eyeAngleLeft != null ||
             value.data.eyeAngleLeft.isNotEmpty) {
           stringBuffer
-              .write("左眼外眼角角度数值  ：${value.data.eyeAngleLeft[0]}\n");
+              .write("左眼内眼角角度数值  ：${value.data.eyeAngleLeft[0]}\n");
         }else{
           errorBuffer.write("左眼外眼角角度 这项没有识别出来\n");
         }
@@ -182,7 +182,7 @@ class AIModel extends BaseModel {
         if (value.data.eyeAngleRight != null ||
             value.data.eyeAngleRight.isNotEmpty) {
           stringBuffer
-              .write("右眼外眼角角度数值  ：${value.data.eyeAngleRight[0]}\n");
+              .write("右眼内眼角角度数值  ：${value.data.eyeAngleRight[0]}\n");
         }else{
           errorBuffer.write("右眼外眼角角度 这项没有识别出来\n");
         }

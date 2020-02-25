@@ -1,0 +1,6 @@
+In Build Projects
+BUILD_MODULE: =====> LABCV_TOB_FULL
+[armeabi-v7a] Compile++ thumb: effect_proxy <= byted_effect.cpp
+[armeabi-v7a] Compile++ thumb: effect_proxy <= yuv_utils.cpp
+[armeabi-v7a] Prebuilt       : libeffect.so <= /Users/apple/lsy/gengmei_app_face/android/ndk/jni/../../libs/armeabi-v7a/
+[armeabi-v7a] SharedLibrary  : libeffect_proxy.so

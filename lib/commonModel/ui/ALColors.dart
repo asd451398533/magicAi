@@ -23,4 +23,5 @@ class ALColors {
   static const Color ColorF4F3F8 = Color(0xFFf4f3f8);
   static const Color Color282828 = Color(0xFF282828);
   static const Color ColorE5E5E5 = Color(0xFFe5e5e5);
+  static const Color ColorF7F6FA = Color(0xFFF7F6FA);
 }

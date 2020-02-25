@@ -3,6 +3,7 @@
  * @date   2019-09-24
  **/
 import 'dart:async';
+import 'dart:math';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -31,8 +32,8 @@ Future quitApp() async {
   return await faceAi.invokeMethod('quit');
 }
 
-Future senSDK(String path) async {
-  return await faceAi.invokeMethod("senSDK", path);
+Future senSDK(String path,String face,String eye) async {
+  return await faceAi.invokeMethod("senSDK", [path,face,eye]);
 }
 
 Future backApp() async{
@@ -51,8 +52,8 @@ Future<String> execStarLong() async {
   return await faceAi.invokeMethod("execStarLong", null);
 }
 
-Future<List> aiDemo() async{
-  return await faceAi.invokeMethod("demo");
+Future<List> aiDemo(String face,String eye) async{
+  return await faceAi.invokeMethod("demo",[face,eye]);
 }
 
 Future<Map> loginWX(String appid) async{

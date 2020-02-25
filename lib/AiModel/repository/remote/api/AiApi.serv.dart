@@ -49,7 +49,6 @@ class AiApiImpl {
 
   Future<Response> get(Dio _dio, url, {data, options, cancelToken}) async {
     Response response;
-    print("GET===> URL:$url   data:$data");
     try {
       response = await _dio.get(url,
           queryParameters: data, options: options, cancelToken: cancelToken);
@@ -62,7 +61,6 @@ class AiApiImpl {
 
   Future<Response> post(Dio _dio, url, {data, options, cancelToken}) async {
     Response response;
-    print("POST===> URL:$url   data:$data");
     try {
       response = await _dio.post(url,
           data: FormData.fromMap(data),
@@ -77,7 +75,6 @@ class AiApiImpl {
 
   Future<Response> put(Dio _dio, url, {data, options, cancelToken}) async {
     Response response;
-    print("PUT===> URL:$url   data:$data");
     try {
       response = await _dio.put(url,
           data: FormData.fromMap(data),
@@ -92,7 +89,6 @@ class AiApiImpl {
 
   Future<Response> delete(Dio _dio, url, {data, options, cancelToken}) async {
     Response response;
-    print("DELETE===> URL:$url   data:$data");
     try {
       response = await _dio.delete(url,
           data: FormData.fromMap(data),
@@ -145,11 +141,11 @@ class AiApiImpl {
     httpLogMap.putIfAbsent(
         "requestQueryParameters", () => response.request.queryParameters);
     if (response.request.data is FormData) {
-      httpLogMap.putIfAbsent("requestData",
+      httpLogMap.putIfAbsent("requestDataFields",
           () => ((response.request.data as FormData).fields.toString()));
     }
     httpLogMap.putIfAbsent(
-        "respondData", () => json.decode(response.data.toString()));
+        "respondData", () => json.decode(response.toString()));
     printJson(httpLogMap);
   }
 

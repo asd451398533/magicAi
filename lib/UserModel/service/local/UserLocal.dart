@@ -17,6 +17,9 @@ const UIION_ID = "UIION_ID";
 const ASSECS_TOKEN = "ASSECS_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
 
+const PHONE_NUMBER="PHONE_NUMBER";
+const USER_ID="USER_ID";
+
 @UserCenter()
 class UserLocal {
   @User(OPEN_ID)
@@ -36,4 +39,10 @@ class UserLocal {
 
   @User(REFRESH_TOKEN)
   String refreshToken;
+
+  @User(PHONE_NUMBER)
+  String phone;
+
+  @User(USER_ID)
+  int uid;
 }

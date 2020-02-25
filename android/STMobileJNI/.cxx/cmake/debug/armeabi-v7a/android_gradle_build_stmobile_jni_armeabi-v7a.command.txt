@@ -1,8 +1,0 @@
-Executable : /Users/apple/Library/Android/sdk/cmake/3.6.4111459/bin/cmake
-arguments : 
---build
-/Users/apple/lsy/gengmei_app_face/android/STMobileJNI/.cxx/cmake/debug/armeabi-v7a
---target
-stmobile_jni
-jvmArgs : 
-

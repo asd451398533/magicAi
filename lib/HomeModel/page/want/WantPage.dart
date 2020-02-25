@@ -3,6 +3,7 @@
  * @date   2020-01-02
  **/
 import 'dart:io';
+import 'dart:math';
 
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -54,7 +55,8 @@ class WantPageState extends BaseState<WantPage> {
       "韩系脸",
       "测试脸"
     ];
-    index = list.indexOf(widget.showText);
+//    index = list.indexOf(widget.showText);
+    index=Random().nextInt(9);
     if (index == null || index <= 0) {
       index = 1;
     }

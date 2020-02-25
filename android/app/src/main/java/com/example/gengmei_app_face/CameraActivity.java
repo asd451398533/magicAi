@@ -35,6 +35,7 @@ import com.example.gengmei_app_face.util.DeviceUtils;
 import com.example.gengmei_app_face.util.MyUtil;
 import com.example.gengmei_app_face.util.StatusBarUtil;
 import com.example.gengmei_app_face.view.CameraHideView;
+import com.tencent.cos.xml.utils.FileUtils;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -49,7 +50,6 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import sensetime.senseme.com.effects.utils.FileUtils;
 import zeusees.tracking.Face;
 import zeusees.tracking.FaceTrackingManager;
 
@@ -325,7 +325,7 @@ public class CameraActivity extends AppCompatActivity implements ActivityCompat.
                         intent.setData(uri);
                         sendBroadcast(intent);
                     }
-                    String scarePath = MyUtil.Companion.scareImg(file.getAbsolutePath(), 200f, FileUtils.getOutputMediaFile().getAbsolutePath(), 75, 0);
+                    String scarePath = MyUtil.Companion.scareImg(file.getAbsolutePath(), 200f, file.getAbsolutePath(), 75, 0);
                     Log.e("lsy", "  pic Time " + (System.currentTimeMillis() - time));
                     Intent intent = new Intent();
                     intent.putExtra(CAMERA_RESULT, file.getAbsolutePath());
@@ -338,66 +338,6 @@ public class CameraActivity extends AppCompatActivity implements ActivityCompat.
     };
 
 
-    private void takePic(byte[] bytes, Camera.Size previewSize) {
-
-        YuvImage yuvimage = new YuvImage(
-                bytes,
-                ImageFormat.NV21,
-                previewSize.width,
-                previewSize.height,
-                null);
-        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        yuvimage.compressToJpeg(new Rect(0, 0, previewSize.width, previewSize.height), 100, baos);// 80--JPG图片的质量[0-100],100最高
-        byte[] rawImage = baos.toByteArray();
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-        final Bitmap bitmap = BitmapFactory.decodeByteArray(rawImage, 0, rawImage.length, options);
-
-
-        Log.e("lsy", "   !!!!!-1111111  ");
-
-        File file1 = new File(Environment.getExternalStorageDirectory() + "/gengmei/");
-        if (!file1.exists()) {
-            file1.mkdirs();
-        }
-        final File file = new File(Environment.getExternalStorageDirectory() + "/gengmei/",
-                "picture.jpg");
-
-        Log.e("lsy", "   !!!!!00000  ");
-        BufferedOutputStream bos = null;
-        try {
-            bos = new BufferedOutputStream(
-                    new FileOutputStream(file));
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, bos);
-            bos.flush();
-        } catch (FileNotFoundException e) {
-            Log.e("lsy", " " + e.getMessage());
-            e.printStackTrace();
-        } catch (IOException e) {
-            Log.e("lsy", " " + e.getMessage());
-            e.printStackTrace();
-        } finally {
-            try {
-                bos.close();
-            } catch (IOException e) {
-                Log.e("lsy", " " + e.getMessage());
-                e.printStackTrace();
-            }
-        }
-        String scarePath = MyUtil.Companion.scareImg(file.getAbsolutePath(), 200f, FileUtils.getOutputMediaFile().getAbsolutePath(), 75, 0);
-        Log.e("lsy", "   SCARRREEWQEWE +" + scarePath);
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                mCameraView.setPreViewNull();
-                Intent intent = new Intent();
-                intent.putExtra(CAMERA_RESULT, file.getAbsolutePath());
-                intent.putExtra(CAMERA_RESULT_SCARE, scarePath);
-                setResult(CAMERA_CODE, intent);
-                finish();
-            }
-        });
-    }
 
     private AspectRatio getAspectRatio(CameraView cameraView) {
         float ratio = (realScreenH) * 1f / realScreenW;

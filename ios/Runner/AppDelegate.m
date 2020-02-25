@@ -15,15 +15,11 @@
 #import "GengmeiStarSdk.h"
 #import "TargetViewController.h"
 #import "FaceMtcnnWrapper.h"
-
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
-#import "SenseArSourceService.h"
-#import "PhotoProcessingVC.h"
-#import "MyTestVC.h"
 #import "MyTestCameraVC.h"
+
 #import "WXApi.h"
-//#import "BEVideoRecorderViewController.h"
+#import "BEVideoRecorderViewController.h"
+
 
 
 @interface AppDelegate () <QCloudSignatureProvider,WXApiDelegate>
@@ -35,6 +31,8 @@
 @property(nonatomic)int reDetectCount;
 @property(nonatomic)FaceMtcnnWrapper * mtcnn;
 @property(nonatomic) long loginKey;
+@property(nonatomic)FlutterEventSink sink;
+@property(nonatomic)FlutterViewController* flutterController;
 @end
 
 @implementation AppDelegate
@@ -80,7 +78,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
     
-    [SenseArMaterialService switchToServerType:DomesticServer];
+//    [SenseArMaterialService switchToServerType:DomesticServer];
     self.mtcnn=[FaceMtcnnWrapper sharedSingleton];
     self.tmpPath= NSTemporaryDirectory();
     self.sdk= [GengmeiStarSdk sharedSingleton];
@@ -92,8 +90,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //        [GRPCCall useInsecureConnectionsForHost:self.kHostAddress];
     //        self.faceService=[FaceAgingService serviceWithHost:self.KHostFaceAddress];
     //        self.service= [HLWCosService serviceWithHost:self.kHostAddress];
-    FlutterViewController* controller =
+     self.flutterController =
     (FlutterViewController*)self.window.rootViewController;
+    
     viewController =
     [UIApplication sharedApplication].delegate.window.rootViewController;
     self.queue =  dispatch_queue_create("com.xxcc", DISPATCH_QUEUE_SERIAL);
@@ -102,7 +101,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"ID %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"]);
     FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
                                             methodChannelWithName:@"samples.flutter.io/startFaceAi"
-                                            binaryMessenger:controller];
+                                            binaryMessenger:self.flutterController];
     
     [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call,
                                            FlutterResult result) {
@@ -206,17 +205,30 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
             [self.sdk quitStarTask];
             self._result(0);
         }else if([@"senSDK" isEqualToString:call.method]){
-            NSString* path = call.arguments;
+            NSString* path = call.arguments[0];
+            NSString* face =call.arguments[1];
+            NSString* eye=call.arguments[2];
             NSData *data = [NSData dataWithContentsOfFile:path];
             UIImage * printerImg = [UIImage imageWithData:data];
-            MyTestVC* ppvc=[MyTestVC new];
-            ppvc.makeIndex=-10086;
-//            PhotoProcessingVC *ppvc = [[PhotoProcessingVC alloc] init];
-            ppvc.imageOriginal = printerImg;
-            ppvc.modalPresentationStyle = UIModalPresentationFullScreen;
-            [viewController presentViewController:ppvc animated:YES completion:nil];
+            MyTestCameraVC*vc=[MyTestCameraVC new];
+//            BEVideoRecorderViewController *vc=[BEVideoRecorderViewController new];
+            vc.image=printerImg;
+            vc.face=face;
+            vc.eye=eye;
+            vc.modalPresentationStyle = UIModalPresentationFullScreen;
+            [viewController presentViewController:vc animated:YES completion:nil];
+//            MyTestVC* ppvc=[MyTestVC new];
+//            ppvc.makeIndex=-10086;
+//            ppvc.imageOriginal = printerImg;
+//            ppvc.modalPresentationStyle = UIModalPresentationFullScreen;
+//            [viewController presentViewController:ppvc animated:YES completion:nil];
         }else if ([@"demo" isEqualToString:call.method]){
-            MyTestCameraVC *vc=[MyTestCameraVC new];
+//            BEVideoRecorderViewController *vc=[BEVideoRecorderViewController new];
+            NSString* face =call.arguments[0];
+            NSString* eye=call.arguments[1];
+            MyTestCameraVC*vc=[MyTestCameraVC new];
+            vc.face=face;
+            vc.eye=eye;
             vc.modalPresentationStyle = UIModalPresentationFullScreen;
             [viewController presentViewController:vc animated:YES completion:nil];
         }else if([@"loginWX" isEqualToString:call.method] ){
@@ -227,9 +239,21 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     }];
     FlutterEventChannel* chargingChannel = [FlutterEventChannel
                                             eventChannelWithName:@"samples.flutter.io/startFaceAi_flutter"
-                                            binaryMessenger:controller];
+                                            binaryMessenger:self.flutterController];
     [chargingChannel setStreamHandler:self];
+    
+//        [self performSelector:@selector(delaa) withObject:nil/*可传任意类型参数*/ afterDelay:5];
+    
+    
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
+    
+}
+
+-(void)delaa{
+    NSLog(@"DELAA ");
+    if(self.sink){
+        self.sink(@"哈wqewqewqe");
+    }
 }
 
 -(void) backValue:(NSNotification *)text{
@@ -343,11 +367,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #pragma mark - <FlutterStreamHandler>
 - (FlutterError* _Nullable)onListenWithArguments:(id _Nullable)arguments
                                        eventSink:(FlutterEventSink)events {
-    // arguments flutter给native的参数
-    // 回调给flutter， 建议使用实例指向，因为该block可以使用多次
-    //    if (events) {
-    //        events(@"push传值给flutter的vc");
-    //    }
+    self.sink=events;
     return nil;
 }
 

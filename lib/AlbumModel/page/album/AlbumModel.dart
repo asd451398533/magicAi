@@ -342,8 +342,8 @@ class AlbumModel extends BaseModel {
   }
 
   void nativeCamera(BuildContext context) {
-    Toast.show(context, "还没适配，暂时先体验第二个AI相机吧");
-    return;
+//    Toast.show(context, "还没适配，暂时先体验第二个AI相机吧");
+//    return;
 
     if (repo.getSelectPhoto().length == _maxCount) {
       Toast.show(context, "最多选择${_maxCount}张图片");

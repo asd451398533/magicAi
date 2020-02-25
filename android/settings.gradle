@@ -1,4 +1,4 @@
-include ':app', ':STMobileJNI'
+include ':app', ':effectsdk'
 
 def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
 

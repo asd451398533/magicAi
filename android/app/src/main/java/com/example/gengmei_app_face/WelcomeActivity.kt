@@ -9,11 +9,11 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
+import com.bytedance.labcv.demo.ResourceHelper
+import com.bytedance.labcv.demo.utils.FileUtils
 import com.example.gengmei_app_face.util.StatusBarUtil
 import com.example.gengmei_flutter_plugin.utils.MyUtil
 import com.example.gengmei_flutter_plugin.utils.addTo
-import com.sensetime.sensearsourcemanager.SenseArMaterialService
-import com.sensetime.sensearsourcemanager.SenseArServerType
 import io.flutter.app.FlutterActivity
 import io.flutter.plugins.GeneratedPluginRegistrant
 import io.reactivex.Observable
@@ -21,9 +21,9 @@ import io.reactivex.ObservableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import sensetime.senseme.com.effects.utils.FileUtils
-import sensetime.senseme.com.effects.utils.STLicenseUtils
 import zeusees.tracking.FaceTrackingManager
+import java.io.File
+import java.io.IOException
 
 /**
  * @author lsy
@@ -42,9 +42,6 @@ class WelcomeActivity :  AppCompatActivity() {
             startActivity(Intent(this@WelcomeActivity,MainActivity::class.java));
             return;
         }
-        SenseArMaterialService.setServerType(SenseArServerType.DomesticServer)
-        //需要初始化一次
-        SenseArMaterialService.shareInstance().initialize(applicationContext)
         setContentView(R.layout.activity_welcome)
         checkPremission();
     }
@@ -65,22 +62,32 @@ class WelcomeActivity :  AppCompatActivity() {
         }
     }
 
-    private fun initFace() {
-        val checkLicenseFromAssetFile = STLicenseUtils.checkLicenseFromAssetFile(this@WelcomeActivity, "sen.lic", false);
-        if (!checkLicenseFromAssetFile) {
-            Toast.makeText(applicationContext, "请检查License授权！", Toast.LENGTH_SHORT).show()
+    fun getVersionCode(): Int {
+        val context = this
+        try {
+            return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+            return -1
         }
+
+    }
+
+
+    private fun initFace() {
+
         Observable.create(ObservableOnSubscribe<String> {
+            if(!ResourceHelper.isResourceReady(this, getVersionCode())){
+                val path = ResourceHelper.RESOURCE
+                val dstFile = getExternalFilesDir("assets")
+                FileUtils.clearDir(File(dstFile, path))
+                try {
+                    FileUtils.copyAssets(getAssets(), path, dstFile!!.getAbsolutePath())
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
             FaceTrackingManager.getInstance().init(applicationContext)
-            FileUtils.copyStickerFiles(this@WelcomeActivity, "newEngine")
-            FileUtils.copyStickerFiles(this@WelcomeActivity, "makeup_eye")
-            FileUtils.copyStickerFiles(this@WelcomeActivity, "makeup_brow")
-            FileUtils.copyStickerFiles(this@WelcomeActivity, "makeup_blush")
-            FileUtils.copyStickerFiles(this@WelcomeActivity, "makeup_highlight")
-            FileUtils.copyStickerFiles(this@WelcomeActivity, "makeup_lip")
-            FileUtils.copyStickerFiles(this@WelcomeActivity, "makeup_eyeliner")
-            FileUtils.copyStickerFiles(this@WelcomeActivity, "makeup_eyelash")
-            FileUtils.copyStickerFiles(this@WelcomeActivity, "makeup_eyeball")
             it.onNext("OK")
         }).subscribeOn(Schedulers.computation()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

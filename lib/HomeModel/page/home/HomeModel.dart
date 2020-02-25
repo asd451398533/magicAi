@@ -7,6 +7,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gengmei_app_face/HomeModel/page/age/AgePage.dart';
 import 'package:gengmei_app_face/HomeModel/page/ai/AIPage.dart';
+import 'package:gengmei_app_face/HomeModel/page/detect/DetectFacePage.dart';
 import 'package:gengmei_app_face/HomeModel/page/star/StarPage.dart';
 import 'package:gengmei_app_face/commonModel/GMBase.dart';
 import 'package:gengmei_app_face/commonModel/toast/toast.dart';
@@ -29,7 +30,11 @@ class HomeModel extends BaseModel {
     if (file != null) {
 
       if (pos == 2) {
-        senSdk(file.path);
+        JumpUtil.jumpLeft(context, DetectFacePage(file.path)).then((value){
+          if(value!=null&&value is List){
+            senSDK(file.path,value[0],value[1]);
+          }
+        });
         return;
       }
       RouterCenterImpl()
@@ -69,10 +74,6 @@ class HomeModel extends BaseModel {
       Toast.show(context, error.toString());
       print(error.toString());
     });
-  }
-
-  void senSdk(String path) {
-    senSDK(path);
   }
 }
 

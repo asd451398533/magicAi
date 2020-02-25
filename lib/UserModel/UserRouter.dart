@@ -12,4 +12,6 @@ import 'UserRouterImpl.dart';
 abstract class UserRouter implements RouterBaser{
 
   Widget getUserPage();
+
+  Widget getAnswerPage();
 }

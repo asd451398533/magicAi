@@ -17,6 +17,9 @@ import 'package:flutter/foundation.dart';
 import 'package:gengmei_app_face/UserModel/service/remote/entity/WXLoginBean.dart';
 import 'package:gengmei_app_face/UserModel/service/remote/entity/WXCheckBean.dart';
 import 'package:gengmei_app_face/UserModel/service/remote/entity/WXUserBean.dart';
+import 'package:gengmei_app_face/UserModel/service/remote/entity/AnswerPageBean.dart';
+import 'package:gengmei_app_face/UserModel/service/remote/entity/GMUserBean.dart';
+import 'package:gengmei_app_face/commonModel/bean/BaseResponse.dart';
 
 const bool inProduction = const bool.fromEnvironment("dart.vm.product");
 
@@ -100,11 +103,79 @@ class WXApiImpl {
     });
   }
 
+  Observable<AnswerPageBean> getAnswerPage(
+      Dio _dio, int pageCount, int page, String value) {
+    return Observable.fromFuture(get(_dio,
+        '-h97n8co7-1258538551.bj.apigw.tencentcs.com/release/comments/page',
+        data: {
+          'pageCount': pageCount,
+          'page': page,
+          'desc': value,
+        })).flatMap((value) {
+      if (value != null &&
+          (value.statusCode >= 200 && value.statusCode < 300)) {
+        return Observable.fromFuture(
+            compute(paseAnswerPageBean, value.toString()));
+      } else {
+        return Observable.fromFuture(null);
+      }
+    });
+  }
+
+  Observable<GMUserBean> getGMUserBean(
+      Dio _dio, String phoneId, String userName, String headimg) {
+    return Observable.fromFuture(post(
+        _dio, '-f56zjcz3-1258538551.bj.apigw.tencentcs.com/release/wechatinfo',
+        data: {
+          'phoneid': phoneId,
+          'username': userName,
+          'headimg': headimg,
+        })).flatMap((value) {
+      if (value != null &&
+          (value.statusCode >= 200 && value.statusCode < 300)) {
+        return Observable.fromFuture(compute(paseGMUserBean, value.toString()));
+      } else {
+        return Observable.fromFuture(null);
+      }
+    });
+  }
+
+  Observable<BaseResponse> submitAnswer(
+      Dio _dio,
+      String uid,
+      String content,
+      String filter_name,
+      String question_1,
+      String question_2,
+      String question_3,
+      String username,
+      String image) {
+    return Observable.fromFuture(post(_dio,
+        '-h97n8co7-1258538551.bj.apigw.tencentcs.com/release/comments/add',
+        data: {
+          'user_id': uid,
+          'content': content,
+          'filter_name': filter_name,
+          'question_1': question_1,
+          'question_2': question_2,
+          'question_3': question_3,
+          'username': username,
+          'image': image,
+        })).flatMap((value) {
+      if (value != null &&
+          (value.statusCode >= 200 && value.statusCode < 300)) {
+        return Observable.fromFuture(
+            compute(paseBaseResponse, value.toString()));
+      } else {
+        return Observable.fromFuture(null);
+      }
+    });
+  }
+
   ///==================base method==================
 
   Future<Response> get(Dio _dio, url, {data, options, cancelToken}) async {
     Response response;
-    print("GET===> URL:$url   data:$data");
     try {
       response = await _dio.get(url,
           queryParameters: data, options: options, cancelToken: cancelToken);
@@ -117,7 +188,6 @@ class WXApiImpl {
 
   Future<Response> post(Dio _dio, url, {data, options, cancelToken}) async {
     Response response;
-    print("POST===> URL:$url   data:$data");
     try {
       response = await _dio.post(url,
           data: FormData.fromMap(data),
@@ -132,7 +202,6 @@ class WXApiImpl {
 
   Future<Response> put(Dio _dio, url, {data, options, cancelToken}) async {
     Response response;
-    print("PUT===> URL:$url   data:$data");
     try {
       response = await _dio.put(url,
           data: FormData.fromMap(data),
@@ -147,7 +216,6 @@ class WXApiImpl {
 
   Future<Response> delete(Dio _dio, url, {data, options, cancelToken}) async {
     Response response;
-    print("DELETE===> URL:$url   data:$data");
     try {
       response = await _dio.delete(url,
           data: FormData.fromMap(data),
@@ -200,11 +268,11 @@ class WXApiImpl {
     httpLogMap.putIfAbsent(
         "requestQueryParameters", () => response.request.queryParameters);
     if (response.request.data is FormData) {
-      httpLogMap.putIfAbsent("requestData",
+      httpLogMap.putIfAbsent("requestDataFields",
           () => ((response.request.data as FormData).fields.toString()));
     }
     httpLogMap.putIfAbsent(
-        "respondData", () => json.decode(response.data.toString()));
+        "respondData", () => json.decode(response.toString()));
     printJson(httpLogMap);
   }
 
@@ -246,4 +314,16 @@ WXCheckBean paseWXCheckBean(String value) {
 
 WXUserBean paseWXUserBean(String value) {
   return WXUserBean.fromJson(json.decode(value));
+}
+
+AnswerPageBean paseAnswerPageBean(String value) {
+  return AnswerPageBean.fromJson(json.decode(value));
+}
+
+GMUserBean paseGMUserBean(String value) {
+  return GMUserBean.fromJson(json.decode(value));
+}
+
+BaseResponse paseBaseResponse(String value) {
+  return BaseResponse.fromJson(json.decode(value));
 }

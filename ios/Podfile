@@ -144,7 +144,17 @@ target 'Runner' do
     end
   }
   pod 'QCloudCOSXML'
-  pod 'OpenCV', '~> 3.0.0'
+#  pod 'OpenCV', '~> 3.0.0'
+  pod 'WechatOpenSDK'
+  pod 'BytedEffects', :path =>'/Users/apple/Downloads/jrtt/byted_effect_ios/iossample'
+  
+  pod 'Masonry', '1.1.0'
+  pod 'Bugly', '2.5.0'
+  pod 'KVOController', '1.2.0'
+  pod 'Toast', '~> 4.0.0'
+  pod 'Mantle', '2.1.0'
+  pod 'TZImagePickerController'
+
 
   # Plugin Pods
   plugin_pods = parse_KV_file('../.flutter-plugins')

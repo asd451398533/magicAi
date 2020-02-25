@@ -27,4 +27,6 @@ class AiImpl implements AiRouter {
   Observable<LandMarkBean> getLandMark(String url) {
     return DetectRepository.getInstance().getLandMark(url);
   }
+
+
 }
