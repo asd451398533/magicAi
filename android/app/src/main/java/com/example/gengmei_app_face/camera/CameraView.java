@@ -8,9 +8,10 @@ import android.hardware.camera2.CameraDevice;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
+
+import androidx.core.view.ViewCompat;
 
 import com.example.gengmei_app_face.R;
 import com.example.gengmei_app_face.camera.size.AspectRatio;

@@ -11,7 +11,7 @@ import 'package:gengmei_app_face/AlbumModel/AlbumRouterImpl.dart';
 @Router("albumModel", AlbumRouterImpl, true)
 abstract class AlbumRouter implements RouterBaser {
   Widget getAlbumPage(String provider, bool showCamera, int bigSelectImage,
-      List<String> selectedImages, bool fromNative, String fromPage,
-      {int maxVideoCount = 0, videoSelectPath = null, iosPushedPage = null
+      List<String> selectedImages,
+      {int maxVideoCount = 0, videoSelectPath = null
       ,noVideoHint=null,needAiCamera=false});
 }

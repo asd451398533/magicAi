@@ -23,11 +23,8 @@ class AlbumPage extends StatefulWidget {
       bool showCamera,
       int maxCount,
       List<String> selectedList,
-      bool fromNative,
       int maxVideo,
       List<String> videoSelectPath,
-      String fromPage,
-      String iosPushedPage,
       String noVideoHint,
       bool needAiCamera) {
     model = new AlbumModel(
@@ -35,11 +32,8 @@ class AlbumPage extends StatefulWidget {
         showCamera,
         maxCount,
         selectedList,
-        fromNative,
         maxVideo,
         videoSelectPath,
-        fromPage,
-        iosPushedPage,
         noVideoHint,
         needAiCamera);
   }
@@ -168,7 +162,7 @@ class AlbumState extends State<AlbumPage> with SingleTickerProviderStateMixin {
   }
 
   backView() {
-    return StreamBuilder<int>(
+    return StreamBuilder<Color>(
       stream: _model.backLive.stream,
       initialData: _model.backLive.data,
       builder: (con, data) {
@@ -182,7 +176,7 @@ class AlbumState extends State<AlbumPage> with SingleTickerProviderStateMixin {
             child: Container(
               width: double.maxFinite,
               height: double.maxFinite,
-              color: Color(data.data),
+              color: data.data,
             ));
       },
     );
@@ -262,7 +256,7 @@ class AlbumState extends State<AlbumPage> with SingleTickerProviderStateMixin {
             }
             return GestureDetector(
                 onTap: () {
-                  _model.previewItem(context, newIndex, pageName());
+                  _model.previewItem(context, newIndex);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -392,15 +386,5 @@ class AlbumState extends State<AlbumPage> with SingleTickerProviderStateMixin {
                     ),
                   );
                 })));
-  }
-
-  @override
-  String pageName() {
-    return "post_add_pic";
-  }
-
-  @override
-  String referrer() {
-    return _model.fromPage;
   }
 }

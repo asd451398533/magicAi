@@ -13,7 +13,6 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.lang.Exception
 import android.view.ViewGroup
-import android.support.v4.view.ViewCompat.setFitsSystemWindows
 import android.app.Activity
 import android.view.WindowManager
 import android.os.Build

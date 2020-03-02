@@ -31,6 +31,9 @@ class DetectFaceState extends BaseState<DetectFacePage> {
   Widget buildItem(BuildContext context) {
     return Scaffold(
       appBar: baseAppBar(
+        backClick: (){
+          Navigator.pop(context);
+        },
         centerTitle: true,
         title: "ai检测面部",
       ),

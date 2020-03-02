@@ -19,7 +19,6 @@ class UserSettingPageWidgetState extends State<UserSettingWidget> {
 
   @override
   Widget build(BuildContext context) {
-    WindowUtil.setBarStatus(false);
     return Scaffold(
         appBar: AppBar(
           title: Text("MagicAi"),

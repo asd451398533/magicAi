@@ -71,7 +71,6 @@ class HomeModel extends BaseModel {
   }
 
   void _onEvent(Object event) {
-    print(event);
     BaseBottomPicker()..setPicker(testPicker())..show(context);
   }
 

@@ -3,7 +3,8 @@ package com.example.gengmei_app_face.wxapi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.example.gengmei_app_face.MainActivity;
 import com.example.gengmei_app_face.bean.WXBean;

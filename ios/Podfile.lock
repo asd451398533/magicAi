@@ -1,11 +1,15 @@
 PODS:
   - Bugly (2.5.0)
   - BytedEffects (3.2.0)
+  - camera (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - gengmei_flutter_plugin (0.0.1):
+    - Flutter
+  - image_gallery_saver (0.0.1):
     - Flutter
   - KVOController (1.2.0)
   - Mantle (2.1.0):
@@ -36,9 +40,11 @@ PODS:
 
 DEPENDENCIES:
   - Bugly (= 2.5.0)
-  - BytedEffects (from `/Users/apple/Downloads/jrtt/byted_effect_ios/iossample`)
+  - BytedEffects (from `/Users/apple/Downloads/iossample`)
+  - camera (from `.symlinks/plugins/camera/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
   - gengmei_flutter_plugin (from `.symlinks/plugins/gengmei_flutter_plugin/ios`)
+  - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - KVOController (= 1.2.0)
   - Mantle (= 2.1.0)
   - Masonry (= 1.1.0)
@@ -68,11 +74,15 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   BytedEffects:
-    :path: "/Users/apple/Downloads/jrtt/byted_effect_ios/iossample"
+    :path: "/Users/apple/Downloads/iossample"
+  camera:
+    :path: ".symlinks/plugins/camera/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
   gengmei_flutter_plugin:
     :path: ".symlinks/plugins/gengmei_flutter_plugin/ios"
+  image_gallery_saver:
+    :path: ".symlinks/plugins/image_gallery_saver/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
   shared_preferences:
@@ -87,9 +97,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   BytedEffects: f299a1d457d7e03d05648f63733586a6f0842384
+  camera: 38cc83ae9a5667bb5a71c7d9edaf60a91920fd4e
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   gengmei_flutter_plugin: 9461e8644c06c4a0e38292ddcca1cc55e6ac6156
+  image_gallery_saver: 73b3cd8ad9c950c739878af9c311744d1bf5405d
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -104,6 +116,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: 3900e8d68428ff3a88817efce82ae9e7d9ffebc9
   WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
 
-PODFILE CHECKSUM: 47ffe9398f0315dc0b0788f8312a2e727b70b380
+PODFILE CHECKSUM: 4ad9ba89a818f6539415de5f3e3b65114ecab0c5
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0

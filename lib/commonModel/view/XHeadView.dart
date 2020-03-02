@@ -141,7 +141,6 @@ class XHeadView extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
     bool needSync=!(img != null && icon != null && needSyncOne);
-    print("NEED SYNC ${needSync}");
     return needSync;
   }
 
@@ -154,7 +153,6 @@ class XHeadView extends CustomPainter {
     downX = detail.localPosition.dx;
     downY = detail.localPosition.dy;
     downTime = DateTime.now().millisecondsSinceEpoch;
-    print("OKK ${detail}  ${downTime}");
 
     if (downX > screenWidth / 4 - circleRadius &&
         downX < screenWidth / 4 + circleRadius &&
@@ -178,7 +176,6 @@ class XHeadView extends CustomPainter {
 
   int onTapUp(TapUpDetails detail) {
     if (DateTime.now().millisecondsSinceEpoch - downTime < 400) {
-      print("OKK ${downPos}");
       return downPos;
     }
   }

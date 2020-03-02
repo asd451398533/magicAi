@@ -102,6 +102,7 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+#use_frameworks!
 
 def parse_KV_file(file, separator='=')
   file_abs_path = File.expand_path(file)
@@ -146,7 +147,7 @@ target 'Runner' do
   pod 'QCloudCOSXML'
 #  pod 'OpenCV', '~> 3.0.0'
   pod 'WechatOpenSDK'
-  pod 'BytedEffects', :path =>'/Users/apple/Downloads/jrtt/byted_effect_ios/iossample'
+  pod 'BytedEffects', :path =>'/Users/apple/Downloads/iossample'
   
   pod 'Masonry', '1.1.0'
   pod 'Bugly', '2.5.0'

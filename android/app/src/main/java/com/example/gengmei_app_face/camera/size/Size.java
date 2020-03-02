@@ -16,7 +16,8 @@
 
 package com.example.gengmei_app_face.camera.size;
 
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 /**
  * Immutable class for describing width and height dimensions in pixels.

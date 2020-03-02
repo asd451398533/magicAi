@@ -17,12 +17,13 @@
 package com.example.gengmei_app_face.camera;
 
 import android.content.Context;
-import android.support.v4.view.ViewCompat;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.core.view.ViewCompat;
 
 import com.example.gengmei_app_face.R;
 import com.example.gengmei_app_face.camera.size.PreviewImpl;

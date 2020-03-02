@@ -38,13 +38,13 @@ class UserPageWidgetState extends State<UserPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    WindowUtil.setBarStatus(false);
     return new Scaffold(
-        appBar: new AppBar(
-          title: Text("MagicAi"),
+        appBar: baseAppBar(
+          needBack: false,
+          title: "MagicAi",
           centerTitle: true,
           backgroundColor: Colors.orange,
-          actions: <Widget>[
+          action: <Widget>[
             IconButton(
               onPressed: () {},
               icon: Icon(

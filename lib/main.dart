@@ -9,22 +9,21 @@ import 'package:gengmei_app_face/commonModel/cache/CacheManager.dart';
 import 'package:gengmei_app_face/main.mark.dart';
 
 import 'HomePage.dart';
+import 'commonModel/camera/CameraInstance.dart';
 import 'commonModel/toast/toast.dart';
-
 
 void main() async {
   runApp(switchPage(window.defaultRouteName));
 }
 
-Widget switchPage(String pageRouter){
-  print("FLutter pageRouter "+pageRouter);
-  switch(pageRouter){
+Widget switchPage(String pageRouter) {
+  print("FLutter pageRouter " + pageRouter);
+  switch (pageRouter) {
     case "answer":
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: RouterCenterImpl().findUserRouter()?.getAnswerPage(),
-      )
-        ;
+      );
     default:
       return MyApp();
   }
@@ -32,9 +31,9 @@ Widget switchPage(String pageRouter){
 
 @RouterCenter()
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+    CameraInstance.getInstance();
     return MaterialApp(
       title: 'MagicAi',
 //      theme: ThemeData(primaryColor: Colors.white),
@@ -70,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
     UserPageWidget(),
   ];
 
-  _pageChange(int page){
+  _pageChange(int page) {
     setState(() {
       _selectedIndex = page;
     });
@@ -134,7 +133,7 @@ _backPress(BuildContext context) async {
   if (lastPopTime == null ||
       DateTime.now().difference(lastPopTime) > Duration(seconds: 1)) {
     lastPopTime = DateTime.now();
-    Toast.show(context,'再按一次退出');
+    Toast.show(context, '再按一次退出');
   } else {
     lastPopTime = DateTime.now();
     await SystemChannels.platform.invokeMethod('SystemNavigator.pop');

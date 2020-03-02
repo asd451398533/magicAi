@@ -18,9 +18,10 @@ package com.example.gengmei_app_face.camera;
 
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
-import android.support.v4.util.SparseArrayCompat;
 import android.util.Log;
 import android.view.SurfaceHolder;
+
+import androidx.collection.SparseArrayCompat;
 
 import com.example.gengmei_app_face.camera.size.AspectRatio;
 import com.example.gengmei_app_face.camera.size.CameraViewImpl;

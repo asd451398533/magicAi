@@ -42,7 +42,6 @@ class HomeModel extends BaseModel {
           .detectImageByPage(context, file.path)
           .then((value) {
         if (value != null && value.isNotEmpty) {
-          print(value);
           if (pos == 1) {
             var agePage = AIPage(value);
             JumpUtil.jumpLeft(context, agePage);

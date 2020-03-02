@@ -38,7 +38,6 @@ class HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   void initState() {
-    print("INIT STATE ");
     _model.loadData(
         context, "http://pic46.nipic.com/20140817/7144451_144052790000_2.jpg");
     super.initState();
@@ -54,7 +53,6 @@ class HomePageWidgetState extends State<HomePageWidget> {
     aiDemo(face, eye).then((value) {
       if (value != null && value.isNotEmpty) {
         var list = List<String>.from(value);
-        print(" VALUE0${list}");
         JumpUtil.jumpAlp(context, WantPage(list[0], list[1], list[2]))
             .then((value) {
           if (value != null && value == 1) {
@@ -82,11 +80,10 @@ class HomePageWidgetState extends State<HomePageWidget> {
               return;
             }
             var albumPage = RouterCenterImpl().findAlbumRouter()?.getAlbumPage(
-                "com.example.gengmei_app_face", true, 1, null, false, "",
+                "com.example.gengmei_app_face", true, 1, null,
                 needAiCamera: false, noVideoHint: "暂时不支持选着视频哦~");
             if (albumPage != null) {
               JumpUtil.jumpLeft(context, albumPage).then((value) {
-                print(value);
                 if (value != null) {
                   if (downPos == 3) {
                     JumpUtil.jumpLeft(context, DetectFacePage(value[0])).then((value){
@@ -294,11 +291,9 @@ class HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print("lsy  BUILDDDD  ");
     final size = MediaQuery.of(context).size;
     width = size.width;
     height = size.height;
-    WindowUtil.setBarStatus(false);
     return new Scaffold(
         body: CustomScrollView(
       slivers: <Widget>[

@@ -5,7 +5,6 @@ import android.graphics.SurfaceTexture
 import android.hardware.Camera
 import android.opengl.GLES20
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.bytedance.labcv.demo.camera.CameraListener
 import com.bytedance.labcv.demo.camera.CameraProxy

@@ -5,19 +5,23 @@
 
 import 'dart:async';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:gengmei_app_face/AlbumModel/bean/DirBean.dart';
+import 'package:gengmei_app_face/AlbumModel/page/camera/CameraPage.dart';
 import 'package:gengmei_app_face/AlbumModel/page/preview/AlbumPreviewPage.dart';
 import 'package:gengmei_app_face/AlbumModel/repository/AlbumRepository.dart';
 import 'package:gengmei_app_face/commonModel/GMBase.dart';
 import 'package:gengmei_app_face/commonModel/live/BaseModel.dart';
 import 'package:gengmei_app_face/commonModel/live/LiveData.dart';
 import 'package:gengmei_app_face/commonModel/toast/toast.dart';
+import 'package:gengmei_app_face/commonModel/util/JumpUtil.dart';
 import 'package:gengmei_app_face/res/GMRes.dart';
 import 'package:gengmei_flutter_plugin/ScanImagePlugn.dart';
 import 'package:gengmei_flutter_plugin/gengmei_flutter_plugin.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 
 Map<String, List<ScanImageItem>> paseAlbum(Object event) {
   var map = Map<String, List<dynamic>>.from(event);
@@ -55,7 +59,7 @@ class AlbumModel extends BaseModel {
   LiveData<int> selectSizeLive = LiveData();
   LiveData<List<DirBean>> dirLive = LiveData();
   LiveData<String> titleData = LiveData();
-  LiveData<int> backLive = LiveData();
+  LiveData<Color> backLive = LiveData();
   String _nowDirName = MainDir;
   StreamSubscription _listen;
   bool showCamera = true;
@@ -72,10 +76,7 @@ class AlbumModel extends BaseModel {
 
   bool showPop = false;
   List<DirBean> _dirList = List();
-  final bool fromNative;
   int maxVideoCount;
-  final String fromPage;
-  final String iosPushedPage;
   final String noVideoHint;
   final bool needAiCamera;
 
@@ -84,11 +85,8 @@ class AlbumModel extends BaseModel {
       this.showCamera,
       int maxCount,
       List<String> selectedList,
-      this.fromNative,
       int maxVideoCount,
       List<String> videoSelectPath,
-      this.fromPage,
-      this.iosPushedPage,
       this.noVideoHint,
       this.needAiCamera) {
     repo.clear();
@@ -273,56 +271,15 @@ class AlbumModel extends BaseModel {
     if (repo.getSelectPhoto().isEmpty && repo.getSelectVideo().isEmpty) {
       Navigator.pop(context, null);
     } else {
-      if (fromNative) {
-        if (Platform.isAndroid) {
-          albumResult(
-              {"image": repo.getSelectPhoto(), "video": repo.getSelectVideo()});
-        } else {
-          iosAlbum(repo.getSelectPhoto(), context, (image) {
-            iosAlbum(repo.getSelectVideo(), context, (video) {
-              var newImages = List<String>();
-              for (String item in repo.getSelectPhoto()) {
-                for (Map real in image) {
-                  var map = Map<String, String>.from(real);
-                  if (map["path"] == item) {
-                    newImages.add(map["realImagePath"]);
-                    break;
-                  }
-                }
-              }
-              var newVideos = List<String>();
-              for (String item in repo.getSelectVideo()) {
-                for (Map real in video) {
-                  var map = Map<String, String>.from(real);
-                  if (map["path"] == item) {
-                    newVideos.add(map["realVideoPath"]);
-                    break;
-                  }
-                }
-              }
-              print("IM ${newImages} $image   VIDEI ${newVideos} ${video}");
-              Navigator.pop(context);
-              albumResult({
-                "image": repo.getSelectPhoto(),
-                "image_real": newImages,
-                "video": repo.getSelectVideo(),
-                "video_real": newVideos,
-                "iosPushedPage": iosPushedPage
-              });
-            });
-          });
-        }
+      if (Platform.isAndroid) {
+        Navigator.pop(context, repo.getSelectPhoto());
       } else {
-        if (Platform.isAndroid) {
-          Navigator.pop(context, repo.getSelectPhoto());
-        } else {
-          iosAlbum(repo.getSelectPhoto(), context, (value) {
-            print(value);
-            List<String> resultList = new List();
-            resultList.add(Map<String, String>.from(value[0])["realImagePath"]);
-            Navigator.pop(context, resultList);
-          });
-        }
+        iosAlbum(repo.getSelectPhoto(), context, (value) {
+          print(value);
+          List<String> resultList = new List();
+          resultList.add(Map<String, String>.from(value[0])["realImagePath"]);
+          Navigator.pop(context, resultList);
+        });
       }
     }
   }
@@ -349,15 +306,19 @@ class AlbumModel extends BaseModel {
       Toast.show(context, "最多选择${_maxCount}张图片");
       return;
     }
-    AlbumRepository.getInstance().nativeCamera(provider).listen((data) {
+//    AlbumRepository.getInstance().nativeCamera(provider).listen((data) {
+    JumpUtil.jumpLeft(context, CameraPage()).then((data) {
       if (data == null) {
         Toast.show(context, "没有拍摄照片");
       } else {
         ScanImageItem item = new ScanImageItem();
-        item.realPath = data["realPath"] as String;
-        item.path = data["path"] as String;
+//        item.realPath = data["realPath"] as String;
+//        item.path = data["path"] as String;
+//        item.isVideo = false;
+        item.realPath = data[0];
+        item.path = data[1];
         item.isVideo = false;
-        String foldName = data["folderName"] as String;
+        String foldName = "gengmeiAlbum";
         repo.addItem(item, foldName);
         if (Platform.isAndroid) {
           repo.addPhoto(item.realPath);
@@ -381,8 +342,11 @@ class AlbumModel extends BaseModel {
 //        Navigator.pop(context, data);
 //        _selectList.add(data);
         //TODO
+        File(item.realPath).readAsBytes().then((value){
+          ImageGallerySaver.saveImage(value);
+        });
       }
-    }).onError((error) {
+    }).catchError((error) {
       Toast.show(context, error);
       print(error);
     });
@@ -412,15 +376,13 @@ class AlbumModel extends BaseModel {
     albumLive.notifyView(repo.getMainValue()[dirName]);
   }
 
-  void previewItem(BuildContext context, int index, String pageName) {
+  void previewItem(BuildContext context, int index) {
     String path = Platform.isAndroid
         ? albumLive.data[index].realPath
         : albumLive.data[index].path;
-    print("LSY $path");
     if (albumLive.data[index].isVideo) {
       GengmeiFlutterPlugin.playAlbumVideo(path);
     } else {
-//      GengmeiFlutterPlugin.previewImage(path);
       Navigator.push(
               context,
               CustomRoute(AlbumPreviewPage(
@@ -450,13 +412,7 @@ class AlbumModel extends BaseModel {
       backLive.notifyView(null);
       return;
     }
-    String alp = "${(dy.abs() * (99)).toInt()}";
-    if (alp.length == 1) {
-      alp = "0$alp";
-    }
-    String colorString = "0x${alp}000000";
-    print(colorString);
-    backLive.notifyView(int.parse(colorString));
+    backLive.notifyView(Color.fromARGB((dy * 255/2).floor(), 0, 0, 0));
   }
 
   aiCam(BuildContext context) {
@@ -467,7 +423,7 @@ class AlbumModel extends BaseModel {
     aiCamera().then((value) {
       var map = Map<String, String>.from(value);
       String path = map["path"];
-      if(path==null){
+      if (path == null) {
         Toast.show(context, "没有选着图片哦");
         return;
       }

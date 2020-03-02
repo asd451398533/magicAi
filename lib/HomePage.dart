@@ -12,6 +12,7 @@ import 'package:gengmei_flutter_plugin/gengmei_flutter_plugin.dart';
 import 'HomeModel.dart';
 import 'commonModel/base/AppBase.dart';
 import 'commonModel/ui/ALColors.dart';
+import 'commonModel/util/WindowUtil.dart';
 
 class HomePage extends StatefulWidget {
   HomeModel _model;
@@ -40,7 +41,7 @@ class HomeState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print("HomeState ");
+    WindowUtil.setBarStatus(true);
     return WillPopScope(
       child: Scaffold(
 //        bottomNavigationBar: StreamBuilder<int>(

@@ -18,7 +18,8 @@ package com.example.gengmei_app_face.camera.size;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.util.SparseArrayCompat;
+
+import androidx.collection.SparseArrayCompat;
 
 /**
  * Immutable class for describing proportional relationship between width and height.

@@ -14,9 +14,10 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.widget.Toast;
+
+import androidx.core.content.FileProvider;
 
 import com.bytedance.labcv.demo.ai.MYVideoAC;
 import com.example.gengmei_app_face.bean.WXBean;

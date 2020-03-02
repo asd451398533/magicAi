@@ -13,7 +13,8 @@ AppBar baseAppBar(
     List<Widget> action,
     bool centerTitle,
     VoidCallback backClick,
-    Color backgroundColor}) {
+    Color backgroundColor,
+    bool needBack = true}) {
   return baseAppBarChangeTitle(
       title: title == null
           ? Container()
@@ -21,7 +22,8 @@ AppBar baseAppBar(
       action: action,
       centerTitle: centerTitle,
       backClick: backClick,
-      backgroundColor: backgroundColor);
+      backgroundColor: backgroundColor,
+      needBack: needBack);
 }
 
 AppBar baseAppBarChangeTitle(
@@ -29,14 +31,16 @@ AppBar baseAppBarChangeTitle(
     List<Widget> action,
     bool centerTitle,
     VoidCallback backClick,
-    Color backgroundColor}) {
+    Color backgroundColor,
+    bool needBack = true}) {
   return AppBar(
+    brightness: Brightness.light,
     backgroundColor:
         backgroundColor == null ? ALColors.ColorFFFFFF : backgroundColor,
     title: title,
     centerTitle: centerTitle,
     elevation: 0.0,
-    leading: GestureDetector(
+    leading:needBack? GestureDetector(
       onTap: backClick,
       child: Hero(
           tag: "left_arrow",
@@ -50,7 +54,7 @@ AppBar baseAppBarChangeTitle(
                 "images/left_arrow.svg",
                 color: Color(0xff323232),
               ))),
-    ),
+    ):Container(),
     actions: action == null ? List<Widget>() : action,
   );
 }
@@ -60,7 +64,11 @@ Text baseText(String text, double fontSize, Color color) {
     text,
     textScaleFactor: 1.0,
     textDirection: TextDirection.ltr,
-    style: TextStyle(fontSize: fontSize, color: color,decoration: TextDecoration.none,),
+    style: TextStyle(
+      fontSize: fontSize,
+      color: color,
+      decoration: TextDecoration.none,
+    ),
   );
 }
 

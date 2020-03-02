@@ -1,8 +1,9 @@
 package com.example.gengmei_app_face;
 
 import android.app.Application;
-import android.support.multidex.MultiDex;
 
+
+import androidx.multidex.MultiDex;
 
 import io.flutter.app.FlutterApplication;
 import io.flutter.plugin.common.MethodChannel;

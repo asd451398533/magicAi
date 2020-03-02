@@ -101,7 +101,6 @@ class HelpPageWidgetState extends State<HelpWidget> {
     final size = MediaQuery.of(context).size;
     width = size.width;
     height = size.height;
-    WindowUtil.setBarStatus(false);
     return Scaffold(
         body: CustomScrollView(
       slivers: <Widget>[

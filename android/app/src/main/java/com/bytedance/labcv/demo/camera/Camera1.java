@@ -6,10 +6,11 @@ import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.os.Build;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 import com.bytedance.labcv.demo.camera.focus.FocusStrategy;
 import com.bytedance.labcv.demo.camera.focus.FocusStrategyFactory;

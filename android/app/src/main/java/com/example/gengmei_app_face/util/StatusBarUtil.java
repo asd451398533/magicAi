@@ -5,15 +5,18 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.IntRange;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.IntRange;
+import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.gengmei_app_face.R;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -223,9 +226,9 @@ public class StatusBarUtil {
                 if (fakeStatusBarView.getVisibility() == View.GONE) {
                     fakeStatusBarView.setVisibility(View.VISIBLE);
                 }
-                fakeStatusBarView.setBackgroundColor(calculateStatusColor(ContextCompat.getColor(activity, Color.parseColor("#00000000")), 0));
+                fakeStatusBarView.setBackgroundColor(0x00000000);
             } else {
-                decorView.addView(createStatusBarView(activity, ContextCompat.getColor(activity, Color.parseColor("#00000000")), 0));
+                decorView.addView(createStatusBarView(activity, ContextCompat.getColor(activity, R.color.black), 0));
             }
         }
     }

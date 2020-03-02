@@ -70,12 +70,12 @@ class AlbumPreviewModel extends BaseModel {
     if (Platform.isAndroid) {
       return;
     }
-    getIosReal(context,index);
+    getIosReal(context, index);
     if (index + 1 < fromPage.length) {
-      getIosReal(context,index + 1);
+      getIosReal(context, index + 1);
     }
     if (index - 1 >= 0) {
-      getIosReal(context,index - 1);
+      getIosReal(context, index - 1);
     }
 //    if (index + 2 < fromPage.length) {
 //      getIosReal(index + 2);
@@ -96,8 +96,12 @@ class AlbumPreviewModel extends BaseModel {
 //    });
   }
 
-  void getIosReal(BuildContext context,int index) {
+  void getIosReal(BuildContext context, int index) {
     if (fromPage[index].isVideo) {
+      return;
+    }
+    if (fromPage[index].realPath != null &&
+        fromPage[index].realPath.isNotEmpty) {
       return;
     }
     if (stateMap[index] == null || stateMap[index] == 0) {
@@ -107,7 +111,8 @@ class AlbumPreviewModel extends BaseModel {
 //        if(DateTime.now().millisecondsSinceEpoch-startTime>1500){
 //          Toast.show(context,"为您下载iCloud图片" );
 //        }
-        print("TIME  ${startTime - DateTime.now().millisecondsSinceEpoch}   ${index}");
+        print(
+            "TIME  ${startTime - DateTime.now().millisecondsSinceEpoch}   ${index}");
         if (value == null) {
           print("出错了 晕！ ${fromPage[index].path}");
           stateMap[index] = 0;

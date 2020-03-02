@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
-		1842049B23EC0092005E88DF /* bef_effect_ai_public_define.h in Headers */ = {isa = PBXBuildFile; fileRef = 1842048F23EC0090005E88DF /* bef_effect_ai_public_define.h */; };
 		1842049C23EC0092005E88DF /* bef_effect_ai_hand.h in Headers */ = {isa = PBXBuildFile; fileRef = 1842049023EC0090005E88DF /* bef_effect_ai_hand.h */; };
 		1842049D23EC0092005E88DF /* bef_effect_ai_face_clustering.h in Headers */ = {isa = PBXBuildFile; fileRef = 1842049123EC0090005E88DF /* bef_effect_ai_face_clustering.h */; };
 		1842049E23EC0092005E88DF /* bef_effect_ai_lightcls.h in Headers */ = {isa = PBXBuildFile; fileRef = 1842049223EC0090005E88DF /* bef_effect_ai_lightcls.h */; };
@@ -38,11 +37,6 @@
 		18657A4A2305325000062FC7 /* GengmeiStarSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 18657A492305325000062FC7 /* GengmeiStarSdk.m */; };
 		18657A4E230549DB00062FC7 /* GengmeiStarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18657A4D230549DB00062FC7 /* GengmeiStarItem.m */; };
 		186C64E923E9B096009FE310 /* opencv+parallel_for_.h in Headers */ = {isa = PBXBuildFile; fileRef = 186C64E823E9B096009FE310 /* opencv+parallel_for_.h */; };
-		186C64FB23EAB387009FE310 /* RenderMsgDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 186C64F523EAB387009FE310 /* RenderMsgDelegate.h */; };
-		186C64FD23EAB387009FE310 /* bef_effect_ai_yuv_process.h in Headers */ = {isa = PBXBuildFile; fileRef = 186C64F723EAB387009FE310 /* bef_effect_ai_yuv_process.h */; };
-		186C64FE23EAB387009FE310 /* byted_effect.h in Headers */ = {isa = PBXBuildFile; fileRef = 186C64F823EAB387009FE310 /* byted_effect.h */; };
-		186C64FF23EAB387009FE310 /* bef_effect_ai_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 186C64F923EAB387009FE310 /* bef_effect_ai_api.h */; };
-		186C650023EAB387009FE310 /* bef_effect_ai_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 186C64FA23EAB387009FE310 /* bef_effect_ai_version.h */; };
 		186C656823EAB3F5009FE310 /* BEVideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C650A23EAB3F4009FE310 /* BEVideoCapture.m */; };
 		186C656923EAB3F5009FE310 /* BEDeviceInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C650B23EAB3F4009FE310 /* BEDeviceInfoHelper.m */; };
 		186C656A23EAB3F5009FE310 /* BEGlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C650C23EAB3F4009FE310 /* BEGlobalData.m */; };
@@ -127,7 +121,6 @@
 		186C65B923EAB3F5009FE310 /* UICollectionViewCell+BEAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C656623EAB3F5009FE310 /* UICollectionViewCell+BEAdd.m */; };
 		186C65BA23EAB3F5009FE310 /* UIViewController+BEAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 186C656723EAB3F5009FE310 /* UIViewController+BEAdd.h */; };
 		186C65BC23EAB482009FE310 /* BEMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 186C65BB23EAB482009FE310 /* BEMacro.h */; };
-		186C65E023EB09E3009FE310 /* ModelResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186C65D723EB09E2009FE310 /* ModelResource.bundle */; };
 		186C65E223EB09E3009FE310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186C65D923EB09E2009FE310 /* Assets.xcassets */; };
 		186C65E323EB09E3009FE310 /* ComposeMakeup.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186C65DA23EB09E2009FE310 /* ComposeMakeup.bundle */; };
 		186C65F523EB0BAC009FE310 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 186C65EA23EB0BAC009FE310 /* Localizable.strings */; };
@@ -144,11 +137,18 @@
 		1890D78C23D195BB00B54369 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1890D78B23D195BB00B54369 /* WebKit.framework */; };
 		18A5499923325C7E005E865B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5499823325C7E005E865B /* Utils.m */; };
 		18ABB48C230075CC00C309F6 /* GengmeiFFmpeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ABB25F22FF2B1F00C309F6 /* GengmeiFFmpeg.m */; };
+		18BB38582407EF980008C806 /* bef_effect_ai_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BB38572407EF980008C806 /* bef_effect_ai_api.h */; };
+		18BB385A2407EFA80008C806 /* bef_effect_ai_public_define.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BB38592407EFA80008C806 /* bef_effect_ai_public_define.h */; };
+		18BB385C2407EFB90008C806 /* RenderMsgDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BB385B2407EFB90008C806 /* RenderMsgDelegate.h */; };
+		18BB385E2407EFC80008C806 /* bef_effect_ai_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BB385D2407EFC80008C806 /* bef_effect_ai_version.h */; };
+		18BB38602407EFD30008C806 /* byted_effect.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BB385F2407EFD30008C806 /* byted_effect.h */; };
+		18BB38622407EFDD0008C806 /* bef_effect_ai_yuv_process.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BB38612407EFDD0008C806 /* bef_effect_ai_yuv_process.h */; };
+		18BB38642407F0030008C806 /* ModelResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18BB38632407F0030008C806 /* ModelResource.bundle */; };
+		18BB386B24096ABA0008C806 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB386A24096ABA0008C806 /* File.swift */; };
 		18BEE71F2400FA0E003FCA41 /* LicenseBag.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18BEE71E2400FA0E003FCA41 /* LicenseBag.bundle */; };
 		18C8936922ED7D1300038D01 /* FlutterIOSDevicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8936822ED7D1300038D01 /* FlutterIOSDevicePlugin.m */; };
 		18D980212302B23A00A00E07 /* DownloadImageTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D980202302B23A00A00E07 /* DownloadImageTask.m */; };
 		18FBAA3023741413008623C6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FBAA2F23741413008623C6 /* NetworkExtension.framework */; };
-		33E31E7F8F55CA1DE9626694 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3AE76A9BF8F3DA99235657 /* libPods-Runner.a */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		3B80C3941E831B6300D905FE /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B80C3931E831B6300D905FE /* App.framework */; };
 		3B80C3951E831B6300D905FE /* App.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B80C3931E831B6300D905FE /* App.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -160,6 +160,7 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		97E96B84341D38DC0253F758 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CCFD0F283D86CA7CF7B6C0 /* libPods-Runner.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -181,7 +182,6 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		18231CA323017B0800F7FB61 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		1842048F23EC0090005E88DF /* bef_effect_ai_public_define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bef_effect_ai_public_define.h; path = ../../../../../Downloads/include/bef_effect_ai_public_define.h; sourceTree = "<group>"; };
 		1842049023EC0090005E88DF /* bef_effect_ai_hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_hand.h; sourceTree = "<group>"; };
 		1842049123EC0090005E88DF /* bef_effect_ai_face_clustering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_face_clustering.h; sourceTree = "<group>"; };
 		1842049223EC0090005E88DF /* bef_effect_ai_lightcls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_lightcls.h; sourceTree = "<group>"; };
@@ -221,11 +221,6 @@
 		18657A4D230549DB00062FC7 /* GengmeiStarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GengmeiStarItem.m; sourceTree = "<group>"; };
 		18657A4F230549E800062FC7 /* GengmeiStarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GengmeiStarItem.h; sourceTree = "<group>"; };
 		186C64E823E9B096009FE310 /* opencv+parallel_for_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "opencv+parallel_for_.h"; sourceTree = "<group>"; };
-		186C64F523EAB387009FE310 /* RenderMsgDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderMsgDelegate.h; sourceTree = "<group>"; };
-		186C64F723EAB387009FE310 /* bef_effect_ai_yuv_process.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_yuv_process.h; sourceTree = "<group>"; };
-		186C64F823EAB387009FE310 /* byted_effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = byted_effect.h; sourceTree = "<group>"; };
-		186C64F923EAB387009FE310 /* bef_effect_ai_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_api.h; sourceTree = "<group>"; };
-		186C64FA23EAB387009FE310 /* bef_effect_ai_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_version.h; sourceTree = "<group>"; };
 		186C650A23EAB3F4009FE310 /* BEVideoCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEVideoCapture.m; sourceTree = "<group>"; };
 		186C650B23EAB3F4009FE310 /* BEDeviceInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEDeviceInfoHelper.m; sourceTree = "<group>"; };
 		186C650C23EAB3F4009FE310 /* BEGlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEGlobalData.m; sourceTree = "<group>"; };
@@ -310,7 +305,6 @@
 		186C656623EAB3F5009FE310 /* UICollectionViewCell+BEAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+BEAdd.m"; sourceTree = "<group>"; };
 		186C656723EAB3F5009FE310 /* UIViewController+BEAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BEAdd.h"; sourceTree = "<group>"; };
 		186C65BB23EAB482009FE310 /* BEMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMacro.h; sourceTree = "<group>"; };
-		186C65D723EB09E2009FE310 /* ModelResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ModelResource.bundle; sourceTree = "<group>"; };
 		186C65D923EB09E2009FE310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186C65DA23EB09E2009FE310 /* ComposeMakeup.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ComposeMakeup.bundle; sourceTree = "<group>"; };
 		186C65EB23EB0BAC009FE310 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -335,6 +329,15 @@
 		18ABB25C22FF2ADE00C309F6 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		18ABB25F22FF2B1F00C309F6 /* GengmeiFFmpeg.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GengmeiFFmpeg.m; sourceTree = "<group>"; };
 		18ABB26122FF2B3F00C309F6 /* GengmeiFFmpeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GengmeiFFmpeg.h; sourceTree = "<group>"; };
+		18BB38572407EF980008C806 /* bef_effect_ai_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_api.h; sourceTree = "<group>"; };
+		18BB38592407EFA80008C806 /* bef_effect_ai_public_define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bef_effect_ai_public_define.h; path = ../../../../../Downloads/hhaa/bef_effect_ai_public_define.h; sourceTree = "<group>"; };
+		18BB385B2407EFB90008C806 /* RenderMsgDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderMsgDelegate.h; sourceTree = "<group>"; };
+		18BB385D2407EFC80008C806 /* bef_effect_ai_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_version.h; sourceTree = "<group>"; };
+		18BB385F2407EFD30008C806 /* byted_effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = byted_effect.h; sourceTree = "<group>"; };
+		18BB38612407EFDD0008C806 /* bef_effect_ai_yuv_process.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_yuv_process.h; sourceTree = "<group>"; };
+		18BB38632407F0030008C806 /* ModelResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ModelResource.bundle; sourceTree = "<group>"; };
+		18BB386924096A9B0008C806 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		18BB386A24096ABA0008C806 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		18BEE71E2400FA0E003FCA41 /* LicenseBag.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LicenseBag.bundle; sourceTree = "<group>"; };
 		18C8936822ED7D1300038D01 /* FlutterIOSDevicePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterIOSDevicePlugin.m; sourceTree = "<group>"; };
 		18C8936A22ED7D2000038D01 /* FlutterIOSDevicePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterIOSDevicePlugin.h; sourceTree = "<group>"; };
@@ -358,8 +361,8 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0CCFD0F283D86CA7CF7B6C0 /* libPods-Runner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Runner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A932F9BD9B996211C06CD905 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
-		DD3AE76A9BF8F3DA99235657 /* libPods-Runner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Runner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,7 +377,7 @@
 				9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */,
 				3B80C3941E831B6300D905FE /* App.framework in Frameworks */,
 				18FBAA3023741413008623C6 /* NetworkExtension.framework in Frameworks */,
-				33E31E7F8F55CA1DE9626694 /* libPods-Runner.a in Frameworks */,
+				97E96B84341D38DC0253F758 /* libPods-Runner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +387,7 @@
 		186C64F323EAB37B009FE310 /* jrtt */ = {
 			isa = PBXGroup;
 			children = (
+				18BB38562407EF280008C806 /* New Group */,
 				186C65E923EB0BAB009FE310 /* en.lproj */,
 				186C65EE23EB0BAC009FE310 /* zh-Hans.lproj */,
 				186C65D623EB09E2009FE310 /* Resource */,
@@ -398,6 +402,12 @@
 		186C64F423EAB387009FE310 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				18BB38612407EFDD0008C806 /* bef_effect_ai_yuv_process.h */,
+				18BB385F2407EFD30008C806 /* byted_effect.h */,
+				18BB385D2407EFC80008C806 /* bef_effect_ai_version.h */,
+				18BB385B2407EFB90008C806 /* RenderMsgDelegate.h */,
+				18BB38592407EFA80008C806 /* bef_effect_ai_public_define.h */,
+				18BB38572407EF980008C806 /* bef_effect_ai_api.h */,
 				184204AE23EC0946005E88DF /* bef_effect_ai_public_define.h */,
 				1842049523EC0091005E88DF /* bef_effect_ai_face_attribute.h */,
 				1842049123EC0090005E88DF /* bef_effect_ai_face_clustering.h */,
@@ -408,13 +418,7 @@
 				1842049223EC0090005E88DF /* bef_effect_ai_lightcls.h */,
 				1842049423EC0091005E88DF /* bef_effect_ai_pet_face.h */,
 				1842049323EC0091005E88DF /* bef_effect_ai_portrait_matting.h */,
-				1842048F23EC0090005E88DF /* bef_effect_ai_public_define.h */,
 				1842049923EC0092005E88DF /* bef_effect_ai_skeleton.h */,
-				186C64F523EAB387009FE310 /* RenderMsgDelegate.h */,
-				186C64F723EAB387009FE310 /* bef_effect_ai_yuv_process.h */,
-				186C64F823EAB387009FE310 /* byted_effect.h */,
-				186C64F923EAB387009FE310 /* bef_effect_ai_api.h */,
-				186C64FA23EAB387009FE310 /* bef_effect_ai_version.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -422,10 +426,6 @@
 		186C650823EAB3F4009FE310 /* Record */ = {
 			isa = PBXGroup;
 			children = (
-				184204BC23ED54AB005E88DF /* TestModel.h */,
-				184204BD23ED54AB005E88DF /* TestModel.m */,
-				186C660023EBC31A009FE310 /* MyTestCameraVC.h */,
-				186C65FF23EBC31A009FE310 /* MyTestCameraVC.mm */,
 				186C650923EAB3F4009FE310 /* Utils */,
 				186C651523EAB3F4009FE310 /* Models */,
 				186C652023EAB3F4009FE310 /* manager */,
@@ -439,10 +439,6 @@
 		186C650923EAB3F4009FE310 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				184204B823EC1351005E88DF /* STCommonObjectView.h */,
-				184204B923EC1351005E88DF /* STCommonObjectView.m */,
-				184204B423EC1309005E88DF /* STCommonObjectContainerView.h */,
-				184204B523EC130A005E88DF /* STCommonObjectContainerView.m */,
 				184204A723EC010F005E88DF /* BEDetect.h */,
 				184204A623EC010F005E88DF /* BEDetect.mm */,
 				186C650A23EAB3F4009FE310 /* BEVideoCapture.m */,
@@ -617,8 +613,8 @@
 		186C65D623EB09E2009FE310 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				18BB38632407F0030008C806 /* ModelResource.bundle */,
 				18BEE71E2400FA0E003FCA41 /* LicenseBag.bundle */,
-				186C65D723EB09E2009FE310 /* ModelResource.bundle */,
 				186C65D923EB09E2009FE310 /* Assets.xcassets */,
 				186C65DA23EB09E2009FE310 /* ComposeMakeup.bundle */,
 			);
@@ -659,6 +655,21 @@
 			path = AiCamera;
 			sourceTree = "<group>";
 		};
+		18BB38562407EF280008C806 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				184204B823EC1351005E88DF /* STCommonObjectView.h */,
+				184204B923EC1351005E88DF /* STCommonObjectView.m */,
+				184204B423EC1309005E88DF /* STCommonObjectContainerView.h */,
+				184204B523EC130A005E88DF /* STCommonObjectContainerView.m */,
+				184204BC23ED54AB005E88DF /* TestModel.h */,
+				184204BD23ED54AB005E88DF /* TestModel.m */,
+				186C660023EBC31A009FE310 /* MyTestCameraVC.h */,
+				186C65FF23EBC31A009FE310 /* MyTestCameraVC.mm */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		4E18267B4D9EECC1105D3A2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,7 +683,7 @@
 				185BF13722F027E800792357 /* Accelerate.framework */,
 				185BF11722EFFAF500792357 /* CoreMedia.framework */,
 				185BF11622EFFAF100792357 /* AVFoundation.framework */,
-				DD3AE76A9BF8F3DA99235657 /* libPods-Runner.a */,
+				A0CCFD0F283D86CA7CF7B6C0 /* libPods-Runner.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -724,6 +735,8 @@
 				97C146F11CF9000F007C117D /* Supporting Files */,
 				1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */,
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
+				18BB386924096A9B0008C806 /* Bridge.h */,
+				18BB386A24096ABA0008C806 /* File.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -777,6 +790,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1842049E23EC0092005E88DF /* bef_effect_ai_lightcls.h in Headers */,
+				18BB385C2407EFB90008C806 /* RenderMsgDelegate.h in Headers */,
 				184204A023EC0092005E88DF /* bef_effect_ai_pet_face.h in Headers */,
 				186C657523EAB3F5009FE310 /* BEEffectBackup.h in Headers */,
 				186C658123EAB3F5009FE310 /* BEFaceBeautyViewController.h in Headers */,
@@ -787,13 +801,13 @@
 				184204A223EC0092005E88DF /* bef_effect_ai_face_verify.h in Headers */,
 				186C65A323EAB3F5009FE310 /* BEButtonView.h in Headers */,
 				184204BA23EC1351005E88DF /* STCommonObjectView.h in Headers */,
+				18BB385A2407EFA80008C806 /* bef_effect_ai_public_define.h in Headers */,
 				186C658F23EAB3F5009FE310 /* BECameraContainerView.h in Headers */,
 				184204A423EC0092005E88DF /* bef_effect_ai_hairparser.h in Headers */,
 				186C659D23EAB3F5009FE310 /* BEEffectTitleCollectionViewCell.h in Headers */,
 				186C658B23EAB3F5009FE310 /* BEEffectManager.h in Headers */,
 				186C659223EAB3F5009FE310 /* BEFaceBeautyView.h in Headers */,
 				186C658023EAB3F5009FE310 /* BEModernFilterPickerViewController.h in Headers */,
-				186C64FF23EAB387009FE310 /* bef_effect_ai_api.h in Headers */,
 				186C657223EAB3F5009FE310 /* BEStudioConstants.h in Headers */,
 				186C65BA23EAB3F5009FE310 /* UIViewController+BEAdd.h in Headers */,
 				186C659323EAB3F5009FE310 /* BEModernEffectPickerView.h in Headers */,
@@ -802,16 +816,15 @@
 				184204A123EC0092005E88DF /* bef_effect_ai_face_attribute.h in Headers */,
 				186C656E23EAB3F5009FE310 /* BEDeviceInfoHelper.h in Headers */,
 				184204B623EC130A005E88DF /* STCommonObjectContainerView.h in Headers */,
-				186C650023EAB387009FE310 /* bef_effect_ai_version.h in Headers */,
 				186C65B723EAB3F5009FE310 /* NSString+BEAdd.h in Headers */,
 				186C658D23EAB3F5009FE310 /* BEResourceHelper.h in Headers */,
 				186C657323EAB3F5009FE310 /* BEEffectResponseModel.h in Headers */,
+				18BB385E2407EFC80008C806 /* bef_effect_ai_version.h in Headers */,
 				184204A923EC010F005E88DF /* BEDetect.h in Headers */,
 				186C657F23EAB3F5009FE310 /* BEVideoRecorderViewController.h in Headers */,
 				186C657423EAB3F5009FE310 /* BEComposerNodeModel.h in Headers */,
 				186C659A23EAB3F5009FE310 /* BEModernFilterCollectionViewCell.h in Headers */,
 				186C65B623EAB3F5009FE310 /* UITableViewCell+BEAdd.h in Headers */,
-				186C64FD23EAB387009FE310 /* bef_effect_ai_yuv_process.h in Headers */,
 				186C65A423EAB3F5009FE310 /* BEButtonViewCell.h in Headers */,
 				1842049D23EC0092005E88DF /* bef_effect_ai_face_clustering.h in Headers */,
 				186C658523EAB3F5009FE310 /* BERenderHelper.h in Headers */,
@@ -819,6 +832,7 @@
 				186C64E923E9B096009FE310 /* opencv+parallel_for_.h in Headers */,
 				186C657A23EAB3F5009FE310 /* BEButtonItemModel.h in Headers */,
 				184204BE23ED54AB005E88DF /* TestModel.h in Headers */,
+				18BB38602407EFD30008C806 /* byted_effect.h in Headers */,
 				1842049F23EC0092005E88DF /* bef_effect_ai_portrait_matting.h in Headers */,
 				186C657123EAB3F5009FE310 /* BECloseableProtocol.h in Headers */,
 				186C65AD23EAB3F5009FE310 /* NSArray+BEAdd.h in Headers */,
@@ -831,14 +845,13 @@
 				186C659123EAB3F5009FE310 /* BEModernFilterPickerView.h in Headers */,
 				186C65AB23EAB3F5009FE310 /* BECategoryView.h in Headers */,
 				186C658823EAB3F5009FE310 /* BEFrameProcessor.h in Headers */,
-				186C64FB23EAB387009FE310 /* RenderMsgDelegate.h in Headers */,
+				18BB38582407EF980008C806 /* bef_effect_ai_api.h in Headers */,
 				186C65B023EAB3F5009FE310 /* UICollectionViewCell+BEAdd.h in Headers */,
+				18BB38622407EFDD0008C806 /* bef_effect_ai_yuv_process.h in Headers */,
 				186C65AE23EAB3F5009FE310 /* UIView+BEAdd.h in Headers */,
 				186C65AA23EAB3F5009FE310 /* BEEffectSwitchTabView.h in Headers */,
-				186C64FE23EAB387009FE310 /* byted_effect.h in Headers */,
 				186C656F23EAB3F5009FE310 /* BEArrayDataSource.h in Headers */,
 				186C658C23EAB3F5009FE310 /* BERender.h in Headers */,
-				1842049B23EC0092005E88DF /* bef_effect_ai_public_define.h in Headers */,
 				186C65A223EAB3F5009FE310 /* BEGLView.h in Headers */,
 				186C65BC23EAB482009FE310 /* BEMacro.h in Headers */,
 				186C657023EAB3F5009FE310 /* BEGlobalData.h in Headers */,
@@ -861,7 +874,7 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				12E4C5CABDCB7B34C6D16C65 /* [CP] Embed Pods Frameworks */,
-				CA67D86037B3972CB1777FEB /* [CP] Copy Pods Resources */,
+				4A98F449076707217DF085C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -918,9 +931,9 @@
 				18BEE71F2400FA0E003FCA41 /* LicenseBag.bundle in Resources */,
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
+				18BB38642407F0030008C806 /* ModelResource.bundle in Resources */,
 				9740EEB41CF90195004384FC /* Debug.xcconfig in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
-				186C65E023EB09E3009FE310 /* ModelResource.bundle in Resources */,
 				186C65E223EB09E3009FE310 /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 				186C65F523EB0BAC009FE310 /* Localizable.strings in Resources */,
@@ -985,21 +998,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" thin\n";
 		};
-		9740EEB61CF901F6004384FC /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
-		};
-		CA67D86037B3972CB1777FEB /* [CP] Copy Pods Resources */ = {
+		4A98F449076707217DF085C8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1016,6 +1015,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9740EEB61CF901F6004384FC /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1055,6 +1068,7 @@
 				186C659E23EAB3F5009FE310 /* BEModernFilterCollectionViewCell.m in Sources */,
 				186C657723EAB3F5009FE310 /* BEModelProvider.m in Sources */,
 				18C8936922ED7D1300038D01 /* FlutterIOSDevicePlugin.m in Sources */,
+				18BB386B24096ABA0008C806 /* File.swift in Sources */,
 				18657A4A2305325000062FC7 /* GengmeiStarSdk.m in Sources */,
 				186C658923EAB3F5009FE310 /* BEResourceHelper.m in Sources */,
 				186C65B923EAB3F5009FE310 /* UICollectionViewCell+BEAdd.m in Sources */,
@@ -1308,7 +1322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.gengmeiAppFaceL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = Runner/Bridge.h;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1593,7 +1607,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.gengmeiAppFaceL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = Runner/Bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1683,7 +1697,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.gengmeiAppFaceL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = Runner/Bridge.h;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

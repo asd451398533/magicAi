@@ -1,7 +1,8 @@
 package com.bytedance.labcv.demo.camera.focus;
 
 import android.hardware.Camera;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by yangcihang on 2018/2/22.

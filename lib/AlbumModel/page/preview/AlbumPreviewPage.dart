@@ -7,6 +7,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gengmei_app_face/commonModel/GMBase.dart';
 import 'package:gengmei_app_face/res/GMRes.dart';
@@ -61,10 +62,11 @@ class AlbumPreviewState extends State<AlbumPreviewPage>
   @override
   Widget build(BuildContext context) {
     _size = MediaQuery.of(context).size;
-    return Scaffold(
-//            appBar: baseAppBar(backClick: () {
-//              Navigator.pop(context);
-//            }),
+    return
+      AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle.light,
+          child:
+      Scaffold(
         body: Container(
             color: Colors.black,
             child: Stack(
@@ -167,27 +169,7 @@ class AlbumPreviewState extends State<AlbumPreviewPage>
                           })),
                 ),
               ],
-            )));
-//            Container(
-//                alignment: Alignment.center,
-//                width: double.maxFinite,
-//                height: double.maxFinite,
-//                child: StreamBuilder(
-//                    stream: _model.imageLive.stream,
-//                    initialData: _model.imageLive.data,
-//                    builder: ((con, data) {
-//                      if (data.data == null) {
-//                        return loadingItem();
-//                      }
-//                      return DragScaleContainer(
-//                          doubleTapStillScale: false,
-//                          child: new Image.file(
-//                            File(
-//                              _model.imgPath,
-//                            ),
-//                            fit: BoxFit.fitWidth,
-//                          ));
-//                    })))));
+            ))));
   }
 
   getPage() {
@@ -196,6 +178,15 @@ class AlbumPreviewState extends State<AlbumPreviewPage>
       initialData: _model.pageList.data,
       builder: (con, data) {
         return PhotoViewGallery.builder(
+          loadingBuilder: (c,Im,index){
+            return  ConstrainedBox(
+              constraints: BoxConstraints.expand(),
+              child: Image.file(
+                File(data.data[index].path),
+                fit: BoxFit.fitWidth,
+              ),
+            );
+          },
           scrollPhysics: const BouncingScrollPhysics(),
           builder: (con, index) {
             pageIndex = index;
@@ -229,6 +220,19 @@ class AlbumPreviewState extends State<AlbumPreviewPage>
                     ],
                   ));
             }
+            if (data.data != null &&
+                (Platform.isIOS &&
+                    !data.data[index].isVideo &&
+                    data.data[index].realPath.isNotEmpty &&
+                    data.data[index].data == null)) {
+              return PhotoViewGalleryPageOptions(
+                onTapUp: (con, a, b) => hide(),
+                imageProvider: FileImage(File(data.data[index].realPath)),
+                initialScale: PhotoViewComputedScale.contained * 0.99,
+                minScale: PhotoViewComputedScale.contained * 0.5,
+                maxScale: PhotoViewComputedScale.covered * 1.5,
+              );
+            }
             if (data.data == null ||
                 (Platform.isIOS &&
                     !data.data[index].isVideo &&
@@ -253,92 +257,16 @@ class AlbumPreviewState extends State<AlbumPreviewPage>
                     : MemoryImage(data.data[index].data),
                 initialScale: PhotoViewComputedScale.contained * 0.99,
                 minScale: PhotoViewComputedScale.contained * 0.5,
-                maxScale: PhotoViewComputedScale.covered * 1.1,
+                maxScale: PhotoViewComputedScale.covered * 1.5,
               );
             }
-//            return Container(
-//              alignment: Alignment.center,
-//              child: ConstrainedBox(
-//                  constraints: BoxConstraints.expand(),
-//                  child: DragScaleContainer(
-//                      doubleTapStillScale: false,
-//                      child: GestureDetector(
-//                          onTap: () {
-//                            hide();
-//                          },
-//                          child: Image.file(
-//                            File(data.data[index].realPath),
-//                            fit: BoxFit.fitWidth,
-//                          )))),
-//            );
           },
           itemCount: _model.fromPage.length,
-          loadingChild: loadingItem(),
           pageController: _pageController,
           onPageChanged: (index) {
             _model.pageIndex(index);
           },
         );
-//        return
-//          PageView.builder(
-//          onPageChanged: (index) {
-//            _model.pageIndex(index);
-//          },
-//          itemBuilder: (con, index) {
-//            print("INDEXXX  $index   ");
-//            if (data.data != null && data.data[index].isVideo) {
-//              return Stack(
-//                alignment: AlignmentDirectional.center,
-//                children: <Widget>[
-//                  ConstrainedBox(
-//                      constraints: BoxConstraints.expand(),
-//                      child: GestureDetector(
-//                        onTap: (){
-//                          hide();
-//                        },
-//                        child: Image.file(File(data.data[index].path),
-//                            fit: BoxFit.fitWidth),
-//                      )),
-//                  GestureDetector(
-//                    onTap: () {
-//                      _model.playVideo();
-//                    },
-//                    child: Icon(
-//                      Icons.play_circle_filled,
-//                      size: 80,
-//                    ),
-//                  )
-//                ],
-//              );
-//            }
-//            if (data.data == null ||
-//                data.data[index].realPath == null ||
-//                data.data[index].realPath.isEmpty) {
-//              _model.getRealPath(context, index);
-//              return loadingItem();
-//            }
-//            return Container(
-//              alignment: Alignment.center,
-//              child: ConstrainedBox(
-//                  constraints: BoxConstraints.expand(),
-//                  child: DragScaleContainer(
-//                      doubleTapStillScale: false,
-//                      child: GestureDetector(
-//                          onTap: () {
-//                            hide();
-//                          },
-//                          child: Image.file(
-//                            File(data.data[index].realPath),
-//                            fit: BoxFit.fitWidth,
-//                          )))),
-//            );
-//          },
-//          itemCount: _model.fromPage.length,
-//          scrollDirection: Axis.horizontal,
-//          reverse: false,
-//          controller: _pageController,
-//          physics: PageScrollPhysics(parent: ClampingScrollPhysics()),
-//        );
       },
     );
   }
