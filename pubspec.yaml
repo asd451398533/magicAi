@@ -27,10 +27,10 @@ dependencies:
   path_provider: ^1.6.1
   image_gallery_saver: ^1.2.2
   #  permission_handler: ^3.2.0
-#  gengmei_flutter_plugin:
-#    git:
-#      url: 'git@git.wanmeizhensuo.com:linshengyu/flutter_plugin.git'
-#      ref: "d37dd26d78c3ce0ae288ec69acc2b244307e2752"
+  gengmei_flutter_plugin:
+    git:
+      url: 'git@git.wanmeizhensuo.com:linshengyu/flutter_plugin.git'
+      ref: "d37dd26d78c3ce0ae288ec69acc2b244307e2752"
 #  flutter_common:
 #    git:
 #      url: 'git@git.wanmeizhensuo.com:linshengyu/GM_flutter_plugin_common.git'
@@ -40,9 +40,9 @@ dependencies:
     git:
       url: 'https://github.com/asd451398533/flutter_common.git'
       ref: 'f560639f82ff3b769a34041bdbbe001aa015975b'
-  gengmei_flutter_plugin:
-    git:
-      url: '/Users/apple/lsy/gengmei_flutter_plugin'
+#  gengmei_flutter_plugin:
+#    git:
+#      url: '/Users/apple/lsy/gengmei_flutter_plugin'
 
 dev_dependencies:
   source_gen: '>=0.8.0'
