@@ -3,6 +3,7 @@
 #import <Flutter/Flutter.h>
 #import "QCloudCore.h"
 #import "QCloudCOSXML/QCloudCOSXML.h"
+#import "Runner-swift.h"
 //#import <GRPCClient/GRPCCall+Tests.h>
 //#import "Cos.pbrpc.h"
 //#import "Cos.pbobjc.h"

@@ -7,3 +7,4 @@
 //
 
 import Foundation
+import image_gallery_saver

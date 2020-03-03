@@ -132,9 +132,6 @@
 		187B4E112339E53D005B161B /* TargetViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187B4E0B2339E53D005B161B /* TargetViewController.mm */; };
 		187B4E122339E53D005B161B /* MyUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B4E0D2339E53D005B161B /* MyUtils.m */; };
 		187B4E132339E53D005B161B /* FaceMtcnnWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187B4E0E2339E53D005B161B /* FaceMtcnnWrapper.mm */; };
-		1890D78823D195A600B54369 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1890D78723D195A600B54369 /* Security.framework */; };
-		1890D78A23D195B100B54369 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1890D78923D195B100B54369 /* CoreGraphics.framework */; };
-		1890D78C23D195BB00B54369 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1890D78B23D195BB00B54369 /* WebKit.framework */; };
 		18A5499923325C7E005E865B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5499823325C7E005E865B /* Utils.m */; };
 		18ABB48C230075CC00C309F6 /* GengmeiFFmpeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ABB25F22FF2B1F00C309F6 /* GengmeiFFmpeg.m */; };
 		18BB38582407EF980008C806 /* bef_effect_ai_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BB38572407EF980008C806 /* bef_effect_ai_api.h */; };
@@ -148,10 +145,10 @@
 		18BEE71F2400FA0E003FCA41 /* LicenseBag.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18BEE71E2400FA0E003FCA41 /* LicenseBag.bundle */; };
 		18C8936922ED7D1300038D01 /* FlutterIOSDevicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8936822ED7D1300038D01 /* FlutterIOSDevicePlugin.m */; };
 		18D980212302B23A00A00E07 /* DownloadImageTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D980202302B23A00A00E07 /* DownloadImageTask.m */; };
-		18FBAA3023741413008623C6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FBAA2F23741413008623C6 /* NetworkExtension.framework */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		3B80C3941E831B6300D905FE /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B80C3931E831B6300D905FE /* App.framework */; };
 		3B80C3951E831B6300D905FE /* App.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B80C3931E831B6300D905FE /* App.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9341CB73DD4CEDBECE424702 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9332E15BF7A5DD7D477CC3 /* libPods-Runner.a */; };
 		9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9740EEBA1CF902C7004384FC /* Flutter.framework */; };
 		9705A1C71CF904A300538489 /* Flutter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9740EEBA1CF902C7004384FC /* Flutter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9740EEB41CF90195004384FC /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9740EEB21CF90195004384FC /* Debug.xcconfig */; };
@@ -160,7 +157,6 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
-		97E96B84341D38DC0253F758 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CCFD0F283D86CA7CF7B6C0 /* libPods-Runner.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -203,7 +199,6 @@
 		184204BD23ED54AB005E88DF /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		1847C91923C8239600E05BD5 /* apple-app-site-association */ = {isa = PBXFileReference; lastKnownFileType = text; path = "apple-app-site-association"; sourceTree = "<group>"; };
 		185BF11622EFFAF100792357 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		185BF11722EFFAF500792357 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		185BF13722F027E800792357 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		185BF7BE22F0600000792357 /* UIView+YLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YLView.m"; sourceTree = "<group>"; };
 		185BF7BF22F0600000792357 /* UIView+YLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YLView.h"; sourceTree = "<group>"; };
@@ -321,12 +316,10 @@
 		187B4E0C2339E53D005B161B /* Face.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Face.h; sourceTree = "<group>"; };
 		187B4E0D2339E53D005B161B /* MyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUtils.m; sourceTree = "<group>"; };
 		187B4E0E2339E53D005B161B /* FaceMtcnnWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FaceMtcnnWrapper.mm; sourceTree = "<group>"; };
-		1890D78723D195A600B54369 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1890D78923D195B100B54369 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1890D78B23D195BB00B54369 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		18A5499723325C7D005E865B /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		18A5499823325C7E005E865B /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		18ABB25C22FF2ADE00C309F6 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		18ABB25F22FF2B1F00C309F6 /* GengmeiFFmpeg.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GengmeiFFmpeg.m; sourceTree = "<group>"; };
 		18ABB26122FF2B3F00C309F6 /* GengmeiFFmpeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GengmeiFFmpeg.h; sourceTree = "<group>"; };
 		18BB38572407EF980008C806 /* bef_effect_ai_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bef_effect_ai_api.h; sourceTree = "<group>"; };
@@ -344,7 +337,6 @@
 		18D980202302B23A00A00E07 /* DownloadImageTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadImageTask.m; sourceTree = "<group>"; };
 		18D980222302B24A00A00E07 /* DownloadImageTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadImageTask.h; sourceTree = "<group>"; };
 		18FBAA2E2374135B008623C6 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		18FBAA2F23741413008623C6 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
 		3B80C3931E831B6300D905FE /* App.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = App.framework; path = Flutter/App.framework; sourceTree = "<group>"; };
 		3FEF6D76983334D1EC6EA645 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
@@ -352,6 +344,7 @@
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		7AFFD8ED1D35381100E5BB4D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8F9332E15BF7A5DD7D477CC3 /* libPods-Runner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Runner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		9740EEBA1CF902C7004384FC /* Flutter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flutter.framework; path = Flutter/Flutter.framework; sourceTree = "<group>"; };
@@ -361,8 +354,8 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0CCFD0F283D86CA7CF7B6C0 /* libPods-Runner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Runner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A932F9BD9B996211C06CD905 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
+		EFE4BABC8244B0D3BD6564B8 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,14 +363,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1890D78C23D195BB00B54369 /* WebKit.framework in Frameworks */,
-				1890D78A23D195B100B54369 /* CoreGraphics.framework in Frameworks */,
-				1890D78823D195A600B54369 /* Security.framework in Frameworks */,
 				185BF7C822F16DEC00792357 /* AssetsLibrary.framework in Frameworks */,
 				9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */,
 				3B80C3941E831B6300D905FE /* App.framework in Frameworks */,
-				18FBAA3023741413008623C6 /* NetworkExtension.framework in Frameworks */,
-				97E96B84341D38DC0253F758 /* libPods-Runner.a in Frameworks */,
+				9341CB73DD4CEDBECE424702 /* libPods-Runner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,15 +664,12 @@
 			children = (
 				1890D78B23D195BB00B54369 /* WebKit.framework */,
 				1890D78923D195B100B54369 /* CoreGraphics.framework */,
-				1890D78723D195A600B54369 /* Security.framework */,
-				18FBAA2F23741413008623C6 /* NetworkExtension.framework */,
 				18231CA323017B0800F7FB61 /* AudioToolbox.framework */,
-				18ABB25C22FF2ADE00C309F6 /* VideoToolbox.framework */,
 				185BF7C722F16DC300792357 /* AssetsLibrary.framework */,
 				185BF13722F027E800792357 /* Accelerate.framework */,
-				185BF11722EFFAF500792357 /* CoreMedia.framework */,
 				185BF11622EFFAF100792357 /* AVFoundation.framework */,
-				A0CCFD0F283D86CA7CF7B6C0 /* libPods-Runner.a */,
+				EFE4BABC8244B0D3BD6564B8 /* Pods_Runner.framework */,
+				8F9332E15BF7A5DD7D477CC3 /* libPods-Runner.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -874,7 +860,7 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				12E4C5CABDCB7B34C6D16C65 /* [CP] Embed Pods Frameworks */,
-				4A98F449076707217DF085C8 /* [CP] Copy Pods Resources */,
+				87B2BAE94877B11F22E82B3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -998,7 +984,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" thin\n";
 		};
-		4A98F449076707217DF085C8 /* [CP] Copy Pods Resources */ = {
+		87B2BAE94877B11F22E82B3C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

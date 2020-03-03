@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_album/flutter_album.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:gengmei_app_face/HomeModel/page/detect/DetectFacePage.dart';
 import 'package:gengmei_app_face/HomeModel/page/want/WantPage.dart';
@@ -49,14 +50,14 @@ class HomePageWidgetState extends State<HomePageWidget> {
     super.dispose();
   }
 
-  void toAiDemo(String face,String eye) {
+  void toAiDemo(String face, String eye) {
     aiDemo(face, eye).then((value) {
       if (value != null && value.isNotEmpty) {
         var list = List<String>.from(value);
         JumpUtil.jumpAlp(context, WantPage(list[0], list[1], list[2]))
             .then((value) {
           if (value != null && value == 1) {
-            toAiDemo(face,eye);
+            toAiDemo(face, eye);
           }
         });
       }
@@ -79,16 +80,16 @@ class HomePageWidgetState extends State<HomePageWidget> {
             if (downPos == -1) {
               return;
             }
-            var albumPage = RouterCenterImpl().findAlbumRouter()?.getAlbumPage(
-                "com.example.gengmei_app_face", true, 1, null,
-                needAiCamera: false, noVideoHint: "暂时不支持选着视频哦~");
+            var albumPage = GMAblum()
+                .getAlbumPage(true, 1, null, noVideoHint: "暂时不支持选着视频哦~");
             if (albumPage != null) {
               JumpUtil.jumpLeft(context, albumPage).then((value) {
                 if (value != null) {
                   if (downPos == 3) {
-                    JumpUtil.jumpLeft(context, DetectFacePage(value[0])).then((value){
-                      if(value!=null&&value is List){
-                        toAiDemo(value[0],value[1]);
+                    JumpUtil.jumpLeft(context, DetectFacePage(value[0]))
+                        .then((value) {
+                      if (value != null && value is List) {
+                        toAiDemo(value[0], value[1]);
                       }
                     });
                     return;

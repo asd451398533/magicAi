@@ -7,7 +7,6 @@
 //AiImpl is resign : true
 //HomeRouterImpl is resign : true
 //HelpRouterImpl is resign : true
-//AlbumRouterImpl is resign : true
 //UserRouterImpl is resign : true
 
 import "package:gengmei_app_face/AiModel/AiImpl.dart";
@@ -16,8 +15,6 @@ import "package:gengmei_app_face/HomeModel/HomeRouterImpl.dart";
 import "package:gengmei_app_face/HomeModel/HomeRouter.dart";
 import "package:gengmei_app_face/HelpModel/HelpRouterImpl.dart";
 import "package:gengmei_app_face/HelpModel/HelpRouter.dart";
-import "package:gengmei_app_face/AlbumModel/AlbumRouterImpl.dart";
-import "package:gengmei_app_face/AlbumModel/AlbumRouter.dart";
 import "package:gengmei_app_face/UserModel/UserRouterImpl.dart";
 import "package:gengmei_app_face/UserModel/UserRouter.dart";
 
@@ -50,7 +47,6 @@ class RouterCenterImpl {
     map.putIfAbsent("AiRouter", () => AiImpl());
     map.putIfAbsent("HomeRouter", () => HomeRouterImpl());
     map.putIfAbsent("HelpRouter", () => HelpRouterImpl());
-    map.putIfAbsent("albumModel", () => AlbumRouterImpl());
     map.putIfAbsent("UserRouter", () => UserRouterImpl());
   }
 
@@ -77,13 +73,6 @@ class RouterCenterImpl {
       return null;
     }
     return map["HelpRouter"] as HelpRouter;
-  }
-
-  AlbumRouter findAlbumRouter() {
-    if (map["albumModel"] == null) {
-      return null;
-    }
-    return map["albumModel"] as AlbumRouter;
   }
 
   UserRouter findUserRouter() {

@@ -3,16 +3,17 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_album/camera/CameraInstance.dart';
 import 'package:flutter_common/Annotations/anno/RouterCenter.dart';
 import 'package:gengmei_app_face/UserModel/page/user/UserPageWidget.dart';
 import 'package:gengmei_app_face/commonModel/cache/CacheManager.dart';
 import 'package:gengmei_app_face/main.mark.dart';
 
 import 'HomePage.dart';
-import 'commonModel/camera/CameraInstance.dart';
 import 'commonModel/toast/toast.dart';
 
-void main() async {
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(switchPage(window.defaultRouteName));
 }
 

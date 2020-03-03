@@ -18,6 +18,8 @@ PODS:
   - Masonry (1.1.0)
   - path_provider (0.0.1):
     - Flutter
+  - permission_handler (4.3.0):
+    - Flutter
   - QCloudCore (5.6.6):
     - QCloudCore/Default (= 5.6.6)
   - QCloudCore/Default (5.6.6)
@@ -49,6 +51,7 @@ DEPENDENCIES:
   - Mantle (= 2.1.0)
   - Masonry (= 1.1.0)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
   - QCloudCOSXML
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - shared_preferences_macos (from `.symlinks/plugins/shared_preferences_macos/ios`)
@@ -85,6 +88,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/image_gallery_saver/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
+  permission_handler:
+    :path: ".symlinks/plugins/permission_handler/ios"
   shared_preferences:
     :path: ".symlinks/plugins/shared_preferences/ios"
   shared_preferences_macos:
@@ -106,6 +111,7 @@ SPEC CHECKSUMS:
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
+  permission_handler: 5c75cfde1229eb85f22d367c093900fac03c6c9e
   QCloudCore: 57cb8830b0f7adbd99f7467d23cf42a88257ac63
   QCloudCOSXML: 5589f274de85f2073b69a786c9eef9080009cd3b
   shared_preferences: 430726339841afefe5142b9c1f50cb6bd7793e01
@@ -116,6 +122,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: 3900e8d68428ff3a88817efce82ae9e7d9ffebc9
   WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
 
-PODFILE CHECKSUM: 4ad9ba89a818f6539415de5f3e3b65114ecab0c5
+PODFILE CHECKSUM: 6a73021291c204e0b7644d6a3a7beff912317dd8
 
 COCOAPODS: 1.9.0
